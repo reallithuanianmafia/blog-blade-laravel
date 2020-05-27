@@ -1,0 +1,39 @@
+html, body
+{
+    height: 100%;
+}
+body
+{
+    padding-top: 56px;
+}
+.wm-container
+{
+    min-height: 100%;
+}
+footer
+{
+    margin-top: auto;
+}
+
+.navbar-brand
+{
+    font-family: 'Fjalla One', sans-serif;
+}
+.nav-link
+{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.my-nav-list
+{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.my-nav-list a
+{
+    text-decoration: none;
+    color: black;
+}
+
