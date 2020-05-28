@@ -17,13 +17,26 @@ Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function () {
 
+/* PUBLIC ROUTES -- START -- */
     // Home
     Route::get('/' , 'PmHomesController@index')->name('pm.home');
     // Do not touch to this shit.
     Route::get('/home', 'HomeController@index')->name('home');
-
-
-
+    // Categories
+    Route::get('/categories', 'PmCategoriesController@index')->name('pm.categories.index');
+    Route::get('/categories/{slug}', 'PmCategoriesController@show')->name('pm.categories.show');
+    // Series
+    Route::get('/series', 'PmSeriesController@index')->name('pm.series.index');
+    Route::get('/series/{slug}', 'PmSeriesController@show')->name('pm.series.show');
+    // Posts
+    Route::get('/posts', 'PmPostsController@index')->name('pm.posts.index');
+    Route::get('/posts/{slug}', 'PmPostsController@show')->name('pm.posts.show');
+    // Human
+    Route::get('/about', 'HumansController@about')->name('human.about');
+    Route::get('/portfolio', 'HumansController@portfolio')->name('human.portfolio');
+    Route::get('/contact', 'PmContactsController@show')->name('pm.contacts.show');
+    
+/* PUBLIC ROUTES -- END -- */
 
     // Web Manager
     Route::get('/webmanager', 'WmHomeController@index')->name('wm.home');

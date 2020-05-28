@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Category;
+use App\Series;
+use App\Post;
+use App\Tag;
 class PmHomesController extends Controller
 {
     /**
@@ -13,7 +16,8 @@ class PmHomesController extends Controller
      */
     public function index()
     {
-        return view('pm.index');
+        $posts = Post::all();
+        return view('pm.index', compact('posts'));
     }
 
     /**

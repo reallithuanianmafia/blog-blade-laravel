@@ -9,7 +9,7 @@ body
 {
     background: #f8f9fa;
 }
-.brand-logo, .nav-links li, .nav-links a, button
+.brand-logo, .nav-links li, .nav-links a, .nav-button
 {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
@@ -37,13 +37,14 @@ header
 }
 .nav-links li a
 {
-    transition: all 0.3s ease 0s;
+    
     cursor: pointer;
     text-decoration: none;
 }
 .nav-links li a:hover
 {
     color: red;
+    border-bottom: 3px solid red;
 }
 
 .nav-button
@@ -161,22 +162,35 @@ a.open
 .search_panel input[type='text']
 {
     width: 80%;
-    padding: 3px 1%;
+    height: 35px;
     outline: none;
+    padding-left: 1em;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: none;
 }
 .search_panel button
 {
     position: absolute;
-    padding: 3px 1%;
     width: 20%;
-    top: 0;
-}
-.search_panel button a
-{
+    background-color: #24252A; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
     text-decoration: none;
-    color: #24252A;
-    font-size: 0.9em;
-    border-radius: 0;
+    display: inline-block;
+    height: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    right: 6px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.search_panel button:active, .search_panel button:visited
+{
+    outline: none;
+    border: none;
 }
 .card
 {
@@ -186,8 +200,7 @@ a.open
 {
     height: 50%;
 }
-
-.article-col
+.article-col, .comment-col
 {
     margin-bottom: 5%;
 }
@@ -263,3 +276,50 @@ footer p
     text-transform: uppercase;
     font-family: 'Noto Sans JP', sans-serif;
 }
+
+/* Comment */
+.comment-list
+{
+    list-style: none;
+}
+.comment-list li
+{
+    margin: 4% 0;
+}
+.comment p
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9em;
+}
+.comment h6
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+}
+.comment small
+{
+    float: right;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.comment-card div .card-title
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #24252A;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.comment-card div .card-title:hover
+{
+    color: red;
+}
+.content-col
+{
+    margin-top: 1vw;
+}
+/* Comment End */
