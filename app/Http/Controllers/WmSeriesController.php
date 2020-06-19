@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Series;
 use App\Post;
+use Str;
 class WmSeriesController extends Controller
 {
     /**
@@ -58,6 +59,7 @@ class WmSeriesController extends Controller
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category_id'],
+            'slug' => Str::slug($data['name']),
         ]);
         return redirect(route('wm.series.index'));
     }

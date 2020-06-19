@@ -1,7 +1,8 @@
 @extends('layouts.pm')
-@section('title')Home @endsection
+@section('title')Posts @endsection
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page">Home</li>
+<li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Posts</li>
 @endsection
 @section('content')
 @if(count($posts)>0)

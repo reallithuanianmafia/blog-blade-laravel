@@ -18,6 +18,7 @@ class CreateSeriesTable extends Migration
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->integer('category_id')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

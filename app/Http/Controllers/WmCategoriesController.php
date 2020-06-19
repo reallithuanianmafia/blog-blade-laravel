@@ -7,6 +7,7 @@ use App\Category;
 use App\Series;
 use App\Post;
 use Auth;
+use Str;
 class WmCategoriesController extends Controller
 {
     /**
@@ -62,6 +63,7 @@ class WmCategoriesController extends Controller
                 'name' => $data['name'],
                 'description' => $data['description'],
                 'parent_id' => $data['parent_id'],
+                'slug' => Str::slug($data['name']),
             ]);
             return redirect(route('wm.categories.index'));
         }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,6 +9,15 @@ body
 {
     background: #f8f9fa;
 }
+html, body
+{
+    height: 100%;
+}
+.content 
+{
+    min-height: 100%;
+}
+
 .brand-logo, .nav-links li, .nav-links a, .nav-button
 {
     font-family: 'Montserrat', sans-serif;
@@ -18,6 +27,7 @@ body
     color: #edf0f1;
     text-transform: uppercase;
 }
+
 header
 {
     display: flex;
@@ -35,12 +45,13 @@ header
     display: inline-block;
     padding: 0 20px;
 }
+
 .nav-links li a
 {
-    
     cursor: pointer;
     text-decoration: none;
 }
+
 .nav-links li a:hover
 {
     color: red;
@@ -55,16 +66,19 @@ header
     border: none;
     background: none;
 }
+
 .nav-button:hover
 {
     color: red;
 }
+
 @media only screen and (max-width: 1260px) {
     .user_panel, .desktop__menu {
       display: none;
     }
 
 }
+
 @media screen and (min-width: 1260px) {
     .open
     {
@@ -147,18 +161,18 @@ a.open
     font-family: 'Montserrat', sans-serif;
 }
 
-
-/* Search Panel */
 .search_section
 {
     margin: 3% 0;
     width: 100%;
 }
+
 .search_panel
 {
     width: 100%;
     position: relative;
 }
+
 .search_panel input[type='text']
 {
     width: 80%;
@@ -264,7 +278,6 @@ nav .breadcrumb
 }
 footer
 {
-    min-height: 100px;
     background: #24252A;
     margin-top: 5%;
     padding: 2% 0;
@@ -276,7 +289,6 @@ footer p
     text-transform: uppercase;
     font-family: 'Noto Sans JP', sans-serif;
 }
-
 /* Comment */
 .comment-list
 {
@@ -302,7 +314,6 @@ footer p
     float: right;
     font-family: 'Noto Sans JP', sans-serif;
 }
-
 .comment-card div .card-title
 {
     font-family: 'Noto Sans JP', sans-serif;
