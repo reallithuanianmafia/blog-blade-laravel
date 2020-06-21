@@ -1,5 +1,5 @@
 @extends('layouts.pm')
-@section('title')Example Category Name @endsection
+@section('title'){{$category->name}} @endsection
 @section('content')
 <div class="col-md-12 article-col">
     <div class="card">

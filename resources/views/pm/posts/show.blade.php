@@ -1,5 +1,5 @@
 @extends('layouts.pm')
-@section('title')Example Post Name @endsection
+@section('title'){{$post->name}} @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Posts</a></li>

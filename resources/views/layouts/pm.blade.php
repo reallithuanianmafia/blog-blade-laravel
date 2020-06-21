@@ -10,7 +10,7 @@
 <body>
 <header>
     <div>
-        <a href="#" class="brand-logo"><button class="nav-button">AzarGuliyev</button></a>
+        <a href="{{route('pm.home')}}" class="brand-logo"><button class="nav-button">AzarGuliyev</button></a>
     </div>
     <nav>
         <ul class="nav-links desktop__menu">
@@ -24,18 +24,18 @@
         <a href="#"><button class="nav-button">Login</button></a>
         <a href="#"><button class="nav-button">Register</button></a>
     </div>
-    <a class="open" onclick="openNav()" href="#">MENU</a>
+    <div class="openDiv">
+    <a class="open" onclick="openNav()" href="#">MENU &rarr;</a>
+    </div>
 </header>
 <div id="mobile__menu" class="overlay">
     <a class="close" onclick="closeNav()">&times;</a>
     <div class="overlay__content">
-        <a href="#">Home</a>
-        <a href="#">Categories</a>
-        <a href="#">Series</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+        <a href="{{route('pm.home')}}">Home</a>
+        <a href="{{route('pm.home')}}">About/FAQ</a>
+        <a href="{{route('pm.categories.index')}}">Categories/Series</a>
+        <a href="{{route('pm.categories.index')}}">Contact</a>
+        <a href="{{route('login')}}">Login/Register</a>
     </div>
 </div>
 @include('pminc.searchbar')
