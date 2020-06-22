@@ -9,7 +9,14 @@
     <div class="list-group" id="list-tab" role="tablist">
     @if(count($categories)>0)
     @foreach($categories as $category)
-      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><p>{{$category->name}}</p><p>{{$category->description}}</p></a>
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{{route('pm.categories.show', $category->slug)}}" role="tab" aria-controls="home">
+        <div class="card-header">
+          <span class="badge badge-pill badge-dark">{{$category->name}}</span>
+        </div>
+        <div class="card-body">
+          <p>{{$category->description}}</p>
+        </div>
+      </a>
     @endforeach
     @else
     </div>

@@ -13,7 +13,7 @@
 <main class="content">
     <div class="container-fluid">
         <div class="row justify-content-md-center">
-            <div class="col-md-7 col-lg-7 article_section">
+            <div class="col-md-11 col-lg-10 article_section">
                 <div class="row ">
                     <div class="col-md-12">
                         <nav aria-label="breadcrumb">
@@ -22,7 +22,19 @@
                             </ol>
                         </nav>
                     </div>
-@yield('content')
+                    @yield('content')
+                    <div class="col-md-4">
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-action text-center">Playlist</a>
+                            @if(count($posts)>0)
+                            @foreach($posts as $post)
+                                <a href="{{route('pm.series.post', [$series->slug, $post->slug])}}" class="list-group-item list-group-item-action {{ Request::is('series/'.$series->slug.'/'.$post->slug) ? 'active btn-dark' : '' }}">{{$post->name}}</a>
+                            @endforeach
+                            @else
+                            <a class="list-group-item list-group-item-action">No post has been added to {{$series->name}}</a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

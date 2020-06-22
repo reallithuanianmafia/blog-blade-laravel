@@ -30,6 +30,14 @@ class PmSeriesController extends Controller
     public function show($slug)
     {
         $series = Series::where('slug', $slug)->firstOrFail();
-        return view('pm.series.show', compact('series'));
+        $posts = $series->posts()->orderBy('id')->get();;
+        return view('pm.series.show', compact('series', 'posts'));
+    }
+    public function post($slug, $post)
+    {
+        $series = Series::where('slug', $slug)->firstOrFail();
+        $posts = $series->posts;
+        $post = $series->posts()->where('slug', $post)->firstOrFail();
+        return view('pm.series.post', compact('series', 'posts', 'post'));
     }
 }

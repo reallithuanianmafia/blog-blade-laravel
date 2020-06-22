@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     // Series
     Route::get('/series', 'PmSeriesController@index')->name('pm.series.index');
     Route::get('/series/{slug}', 'PmSeriesController@show')->name('pm.series.show');
+    Route::get('/series/{slug}/{post}', 'PmSeriesController@post')->name('pm.series.post');
     // Posts
     Route::get('/posts', 'PmPostsController@index')->name('pm.posts.index');
     Route::get('/posts/{slug}', 'PmPostsController@show')->name('pm.posts.show');

@@ -42,7 +42,8 @@ class WmPostsController extends Controller
         }
         $categories_dropdown .= "</select>";
         $tags = Tag::all();
-        return view('wm.posts.create', compact('categories_dropdown', 'tags'));
+        $series = Series::all();
+        return view('wm.posts.create', compact('categories_dropdown', 'tags', 'series'));
     }
 
     /**
@@ -58,13 +59,17 @@ class WmPostsController extends Controller
         {
             $data['slug'] = Str::slug($data['name'].'-'.Str::random(5));
         }
+        if($data['series_id'] == 0)
+        {
+            $data['series_id'] = NULL;
+        }
         $post = Post::create([
             'name' => $data['name'],
             'content' => $data['content'],
             'description' => $data['description'],
             'keywords' => $data['keywords'],
             'category_id' => $data['category_id'],
-            'series_id' => NULL,
+            'series_id' => $data['series_id'],
             'user_id' => auth()->user()->id,
             'status' => $data['status'],
             'slug' => $data['slug'],

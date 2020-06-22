@@ -24,6 +24,8 @@ class PmCategoriesController extends Controller
     public function show($slug)
     {
         $category = Category::where('slug', $slug)->firstOrFail();
-        return view('pm.categories.show', compact('category'));
+        $series = $category->series()->orderBy('id')->get();
+        $posts = $category->posts()->orderBy('id')->get();
+        return view('pm.categories.show', compact('category', 'series', 'posts'));
     }
 }
