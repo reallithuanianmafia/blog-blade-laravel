@@ -27,8 +27,8 @@
     <a class="close" onclick="closeNav()">&times;</a>
     <div class="overlay__content">
         <a href="{{route('pm.home')}}">Home</a>
-        <a href="{{route('pm.home')}}">About/FAQ</a>
-        <a href="{{route('pm.categories.index')}}">Categories/Series</a>
+        <a href="{{route('pm.categories.index')}}">Categories</a>
+        <a href="{{route('pm.series.index')}}">Series</a>
         <a href="{{route('pm.categories.index')}}">Contact</a>
         <a href="{{route('login')}}">Login/Register</a>
     </div>

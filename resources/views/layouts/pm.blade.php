@@ -10,6 +10,9 @@
 <body>
 @include('pminc.navigationbar')
 @include('pminc.searchbar')
+@if (\Route::is('pm.home'))  
+@include('pminc.slogan')
+@endif
 <main class="content">
     <div class="container-fluid">
         <div class="row justify-content-md-center">
