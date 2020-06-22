@@ -114,9 +114,20 @@ class WmCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $id)
+    public function destroy(Category $category)
     {
-        $id->delete();
-        return redirect(route('wm.categories.index'));
+        if(count($category->series))
+        {
+            return 'Still there are series using this category.';
+        }
+        else if(count($category->posts))
+        {
+            return 'Still there are posts using this category.';
+        }
+        else
+        {
+            $category->delete();
+            return redirect(route('wm.categories.index'));
+        }
     }
 }

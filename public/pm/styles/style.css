@@ -198,7 +198,6 @@ a.open:hover
     position: absolute;
     width: 20%;
     background-color: #24252A; /* Green */
-    border: none;
     color: #f8f9fa;
     text-align: center;
     text-decoration: none;
@@ -211,6 +210,9 @@ a.open:hover
     right: 6px;
     padding-right: 6px;
     padding-left: 6px;
+    border: 1px solid #24252A ;
+    border-radius: 0 15px 15px 0; 
+    outline: none;
 }
 .search_panel button:active, .search_panel button:visited
 {

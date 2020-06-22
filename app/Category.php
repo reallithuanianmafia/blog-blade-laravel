@@ -26,4 +26,8 @@ class Category extends Model
     {
         return $this->hasMany('App\Series');
     }
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }

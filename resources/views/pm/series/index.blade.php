@@ -5,16 +5,14 @@
 <li class="breadcrumb-item active" aria-current="page">Series</li>
 @endsection
 @section('content')
-@if(count($series)>0)
-@foreach($series as $oneseries)
-<div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">       
-        <div class="card-body">
-            <a href="{{route('pm.series.show', $oneseries->slug)}}" class="btn btn-primary form-control">{{$oneseries->name}}</a>
-          </div>
-      </div>
+<div class="col-12">
+    <div class="list-group" id="list-tab" role="tablist">
+    @if(count($series)>0)
+    @foreach($series as $oneserie)
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><p>{{$oneserie->name}}</p><p>{{$oneserie->description}}</p></a>
+    @endforeach
+    </div>
 </div>
-@endforeach
 @else
 <div class="col-md-12">
     <div class="card">       

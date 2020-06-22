@@ -128,4 +128,18 @@ class WmPostsController extends Controller
     {
 
     }
+    public function fetch(Request $request)
+    {
+        $query = $request->get('query');
+        $data = DB::table('series')
+            ->where('name', 'LIKE', '%{$query}%')
+            ->get();
+        $output = '<ul class="dropdown-menu" style="display:block;position:relative;">';
+        foreach($data as $row)
+        {
+            $output .= '<li><a>'.$row->name.'</a></li>';
+        }
+        $output .= '</ul>';
+        echo $output;
+    }
 }

@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/webmanager/categories', 'WmCategoriesController@index')->name('wm.categories.index');
     Route::get('/webmanager/categories/create', 'WmCategoriesController@create')->name('wm.categories.create');
     Route::post('/webmanager/categories', 'WmCategoriesController@store')->name('wm.categories.store');
-    Route::delete('/webmanager/categories/{id}', 'WmCategoriesController@destroy')->name('wm.categories.destroy');
+    Route::delete('/webmanager/categories/{category}', 'WmCategoriesController@destroy')->name('wm.categories.destroy');
 
     Route::get('/webmanager/series', 'WmSeriesController@index')->name('wm.series.index');
     Route::get('/webmanager/series/create', 'WmSeriesController@create')->name('wm.series.create');
@@ -61,5 +61,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/webmanager/tags', 'WmTagsController@store')->name('wm.tags.store');
     Route::delete('/webmanager/tags/{id}', 'WmTagsController@destroy')->name('wm.tags.destroy');
 
-    Route::get('/webmanager/testing', 'WmPostsController@testing');
+    //Route::get('/webmanager/testing', 'WmPostsController@testing');
+    Route::get('/webmanager/testing', 'TestController@index');
+    Route::post('/autocomplete/fetch', 'WmPostsController@fetch')->name('autocomplete.fetch');
 });

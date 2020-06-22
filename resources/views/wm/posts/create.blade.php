@@ -11,6 +11,10 @@
             </ol>
           </nav>
         </div>
+  <div class="col-md-12">
+  <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+  <button>Get External Content</button>
+  </div>
 
         <div class="col-md-12">
           {{Form::open(array('method' => 'POST', 'action' => 'WmPostsController@store'))}}
@@ -35,6 +39,17 @@
                         <option value="0">0 Signal</option>
                         <option value="1">Activate</option>
                       </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" style="margin-bottom: 3%;">
+                  <h5 class="card-header">Series (Optional)</h5>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>Slug</label>
+                      <input type="text" class="form-control" name="series_name" id="series_name" placeholder="Enter the series name">
+                      <div id="seriesList"></div>
+                      <small> As a default, slug will be automatically set by name. You can also customize it.</small>
                     </div>
                   </div>
                 </div>
@@ -86,4 +101,38 @@
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.ajax({url: "{{URL::asset('demo_test.txt')}}", success: function(result){
+      $("#div1").html(result);
+    }});
+  });
+});
+</script>
+
+
+<script>
+  $(document).ready(function(){
+    $('#series_name').keyup(function(){
+      var query = $(this).val();
+      if(query != '')
+      {
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+          url:"{{ route('autocomplete.fetch') }}",
+          method: "POST",
+          data: {query:query, _token:_token},
+          success:function(data)
+          {
+            $('#seriesList').fadeIn();
+            $('#seriesList').html(data);
+          }
+        })
+      }
+    })
+  })
+</script>
+
 @endsection

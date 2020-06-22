@@ -5,17 +5,15 @@
 <li class="breadcrumb-item active" aria-current="page">Categories</li>
 @endsection
 @section('content')
-@if(count($categories)>0)
-@foreach($categories as $category)
-<div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">       
-        <div class="card-body">
-            <a href="{{route('pm.categories.show', $category->slug)}}" class="btn btn-primary form-control">{{$category->name}}</a>
-          </div>
-      </div>
+<div class="col-12">
+    <div class="list-group" id="list-tab" role="tablist">
+    @if(count($categories)>0)
+    @foreach($categories as $category)
+      <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><p>{{$category->name}}</p><p>{{$category->description}}</p></a>
+    @endforeach
+    @else
+    </div>
 </div>
-@endforeach
-@else
 <div class="col-md-12">
     <div class="card">       
         <div class="card-body">
