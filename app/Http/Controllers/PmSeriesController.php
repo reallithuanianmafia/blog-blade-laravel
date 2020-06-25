@@ -7,6 +7,7 @@ use App\Category;
 use App\Series;
 use App\Post;
 use App\Tag;
+use App\Comment;
 class PmSeriesController extends Controller
 {
     /**
@@ -16,7 +17,7 @@ class PmSeriesController extends Controller
      */
     public function index()
     {
-        $series = Series::all();
+        $series = Series::orderBy('id', 'DESC')->get();
         return view('pm.series.index', compact('series'));
     }
 
@@ -38,6 +39,7 @@ class PmSeriesController extends Controller
         $series = Series::where('slug', $slug)->firstOrFail();
         $posts = $series->posts;
         $post = $series->posts()->where('slug', $post)->firstOrFail();
-        return view('pm.series.post', compact('series', 'posts', 'post'));
+        $comments = Comment::where('post_id', $post->id)->orderBy('id', 'DESC')->get();
+        return view('pm.series.post', compact('series', 'posts', 'post', 'comments'));
     }
 }

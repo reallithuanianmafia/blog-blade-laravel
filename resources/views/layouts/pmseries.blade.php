@@ -23,7 +23,7 @@
                         </nav>
                     </div>
                     @yield('content')
-                    <div class="col-md-4">
+                    <div class="col-md-4 playlist">
                         <div class="list-group">
                             <a class="list-group-item list-group-item-action text-center">Playlist</a>
                             @if(count($posts)>0)
@@ -35,10 +35,16 @@
                             @endif
                         </div>
                     </div>
+                    @yield('comments')
+                    
+                    
                 </div>
             </div>
         </div>
+        
     </div>
+
+
 </main>
 @include('pminc.footer')
 <script type="text/javascript" src="{{URL::asset('pm/js/mobile.js')}}"></script>

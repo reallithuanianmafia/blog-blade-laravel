@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{URL::asset('wm/css/style.css')}}">
+    @yield('head')
     <title>Document</title>
 </head>
 <body>
@@ -47,6 +48,7 @@
           <a href="{{route('wm.series.index')}}" class="list-group-item {{ Route::is('wm.series.index') ? 'active' : '' }}">Series</a>
           <a href="{{route('wm.posts.index')}}" class="list-group-item {{ Route::is('wm.posts.index') ? 'active' : '' }}">Posts</a>
           <a href="{{route('wm.tags.index')}}" class="list-group-item {{ Route::is('wm.tags.index') ? 'active' : '' }}">Tags</a>
+          <a href="{{route('wm.users.index')}}" class="list-group-item {{ Route::is('wm.users.index') ? 'active' : '' }}">Users</a>
         </div>
       </div>
       <div class="col-lg-8 mt-4">

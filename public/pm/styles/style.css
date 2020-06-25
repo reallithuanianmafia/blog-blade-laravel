@@ -193,6 +193,7 @@ a.open:hover
     border-radius: 15px 0 0 15px; 
 
 }
+
 .search_panel button
 {
     position: absolute;
@@ -352,6 +353,10 @@ footer p
 {
     margin-top: 1vw;
 }
+.comment-col-margin
+{
+    margin-top: 1em;
+}
 /* Comment End */
 
 @media only screen and (max-width: 600px) {
@@ -362,6 +367,13 @@ footer p
     .search_panel input
     {
         font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .playlist
+    {
+        margin-top: 1em;
     }
 }
 

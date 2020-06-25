@@ -13,12 +13,12 @@ class Category extends Model
     {
         if($this->parent_id == NULL)
         {
-            return 'Main Category';
+            return '<span class="badge badge-danger">Main Category</span>';
         }
         else
         {
             $category = Category::where('id', $this->parent_id)->firstOrFail()->name;
-            return $category;
+            return '<span class="badge badge-primary">'.$category.'</span>';
         }
     }
     

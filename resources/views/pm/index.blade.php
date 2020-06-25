@@ -6,7 +6,7 @@
 @section('content')
 @if(count($posts)>0)
 @foreach($posts as $post)
-<div class="col-md-6 article-col">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 article-col">
     <div class="card article-card">
         <div class="card-body card_body_fixed_height article-card-body">
             <a href="{{route('pm.posts.show', $post->slug)}}" class="card-title article-title"><h5>{{$post->name}}</h5></a>
@@ -18,9 +18,7 @@
             <li class="list-group-item article-author"><a href="#"><ion-icon name="person-sharp"></ion-icon> {{$post->user->name}}</a></li>
             <li class="list-group-item article-date"><p><ion-icon name="calendar-sharp"></ion-icon> {{$post->created_at}}</p></li>
         </ul>
-        <div class="card-body footer">
-            <a href="{{route('pm.posts.show', $post->slug)}}" class="card-link read-more">Read More	&rarr;</a>
-        </div>
+        
     </div>
 </div>
 @endforeach

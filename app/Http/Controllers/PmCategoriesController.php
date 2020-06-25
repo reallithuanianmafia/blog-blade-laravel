@@ -16,7 +16,7 @@ class PmCategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('id', 'DESC')->get();
         return view('pm.categories.index', compact('categories'));
     }
 

@@ -17,11 +17,8 @@
             <li class="list-group-item article-category"><a href="#"><ion-icon name="briefcase-sharp"></ion-icon> {{$post->category->name}}</a></li>
             <li class="list-group-item article-comment"><a href="#"><ion-icon name="chatbubbles-sharp"></ion-icon> 5 Comments</a></li>
             <li class="list-group-item article-author"><a href="#"><ion-icon name="person-sharp"></ion-icon> {{$post->user->name}}</a></li>
-            <li class="list-group-item article-date"><p><ion-icon name="calendar-sharp"></ion-icon> {{$post->created_at}}</p></li>
+            <li class="list-group-item article-date"><p><ion-icon name="calendar-sharp"></ion-icon> {{ date("F j, Y, g:i a",strtotime($post->created_at)) }}</p></li>
         </ul>
-        <div class="card-body footer">
-            <a href="{{route('pm.posts.show', $post->slug)}}" class="card-link read-more">Read More	&rarr;</a>
-        </div>
     </div>
 </div>
 @endforeach

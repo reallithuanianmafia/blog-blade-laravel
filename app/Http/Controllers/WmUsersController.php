@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Series;
-use App\Post;
-use App\Tag;
-class PmHomesController extends Controller
+use App\User;
+class WmUsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,8 @@ class PmHomesController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('id', 'DESC')->get();
-        return view('pm.index', compact('posts'));
+        $users = User::orderBy('id', 'DESC')->get();
+        return view('wm.users.index', compact('users'));
     }
 
     /**
@@ -81,8 +78,13 @@ class PmHomesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        if(auth()->user()->id == $user->id)
+        {
+            return 'u can not delete urself u dumbass';
+        }
+        $user->delete();
+        return 'deleted';
     }
 }

@@ -25,6 +25,14 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag', 'posts_tags');
     }
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
     public function seriesCheck()
     {
         if(!$this->series)

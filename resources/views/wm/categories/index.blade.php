@@ -28,7 +28,7 @@
                   <tr>
                     <th scope="row">{{$category->id}}</th>
                     <td>{{$category->name}}</td>
-                    <td>{{$category->checkParent()}}</td>
+                    <td>{!!$category->checkParent()!!}</td>
                     <td>
                       {{Form::open(array('method' => 'DELETE', 'action' => ['WmCategoriesController@destroy', $category->id]))}}
                         <input type="submit" class="btn btn-danger" value="Delete">

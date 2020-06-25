@@ -1,4 +1,7 @@
 @extends('layouts.wm')
+@section('head')
+<script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
+@endsection
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -23,8 +26,17 @@
                     </div>
                     <div class="form-group">
                       <label for="description">Content</label>
-                      <input type="text" class="form-control" id="content" name="content">
+                      <textarea name="content" id="editor"></textarea>
                     </div>
+                    <script>
+                      ClassicEditor
+                          .create( document.querySelector( '#editor' ) )
+                          .catch( error => {
+                              console.error( error );
+                          } );
+
+                        
+                  </script>
                     <div class="form-group">
                       <label for="description">Category</label>
                       {!! $categories_dropdown !!}

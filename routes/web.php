@@ -17,7 +17,11 @@ Auth::routes(['register' => true]);
 
 Route::middleware('auth')->group(function () {
 
+    
+
 /* PUBLIC ROUTES -- START -- */
+    
+Route::middleware('throttle:180|360,1')->group(function () {
     // Home
     Route::get('/' , 'PmHomesController@index')->name('pm.home');
     // Do not touch to this shit.
@@ -36,7 +40,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/about', 'HumansController@about')->name('human.about');
     Route::get('/portfolio', 'HumansController@portfolio')->name('human.portfolio');
     Route::get('/contact', 'PmContactsController@show')->name('pm.contacts.show');
-    
+});
+
+    Route::middleware('throttle:5|10,1')->group(function () {
+        Route::post('/puttingacomment/{postslug}', 'PmCommentsController@store')->name('pm.comments.store');
+    });
 /* PUBLIC ROUTES -- END -- */
 
     // Web Manager
@@ -62,6 +70,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/webmanager/tags', 'WmTagsController@store')->name('wm.tags.store');
     Route::delete('/webmanager/tags/{id}', 'WmTagsController@destroy')->name('wm.tags.destroy');
 
+    Route::get('/webmanager/users', 'WmUsersController@index')->name('wm.users.index');
+    Route::delete('/webmanager/users/{user}', 'WmUsersController@destroy')->name('wm.users.destroy');
     //Route::get('/webmanager/testing', 'WmPostsController@testing');
     Route::get('/webmanager/testing', 'TestController@index');
     Route::post('/autocomplete/fetch', 'WmPostsController@fetch')->name('autocomplete.fetch');
