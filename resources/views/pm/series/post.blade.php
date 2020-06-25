@@ -46,6 +46,9 @@
       
 </div>
 @endsection
+@section('sidebar')
+    @include('pminc.playlistforsidebar')
+@endsection
 @section('comments')
-@include('pminc.comments')
+    @include('pminc.comments')
 @endsection

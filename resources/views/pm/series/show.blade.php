@@ -19,3 +19,6 @@
       </div>
 </div>
 @endsection
+@section('sidebar')
+  @include('pminc.playlistforsidebar')
+@endsection

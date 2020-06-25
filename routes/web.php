@@ -40,6 +40,10 @@ Route::middleware('throttle:180|360,1')->group(function () {
     Route::get('/about', 'HumansController@about')->name('human.about');
     Route::get('/portfolio', 'HumansController@portfolio')->name('human.portfolio');
     Route::get('/contact', 'PmContactsController@show')->name('pm.contacts.show');
+    // My Account
+    Route::get('/myaccount', 'PmMyAccountsController@index')->name('pm.myaccount.index');
+    Route::get('/myaccount/newpassword', 'PmMyAccountsController@newpassword')->name('pm.myaccount.newpassword');
+    Route::get('/myaccount/dangerous', 'PmMyAccountsController@dangerous')->name('pm.myaccount.dangerous');
 });
 
     Route::middleware('throttle:5|10,1')->group(function () {

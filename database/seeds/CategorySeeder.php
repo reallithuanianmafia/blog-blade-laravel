@@ -14,31 +14,31 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             'name' => 'HTML',
             'description' => 'This is just a description, by the way.. Lorem ipsum dolor sit amet.',
-            'parent_id' => 0,
+            'parent_id' => NULL,
             'slug' => 'html',
         ]);
         DB::table('categories')->insert([
             'name' => 'CSS',
             'description' => 'This is just a description, by the way.. Lorem ipsum dolor sit amet.',
-            'parent_id' => 0,
+            'parent_id' => NULL,
             'slug' => 'css',
         ]);
         DB::table('categories')->insert([
             'name' => 'Bootstrap',
             'description' => 'This is just a description, by the way.. Lorem ipsum dolor sit amet.',
-            'parent_id' => 0,
+            'parent_id' => NULL,
             'slug' => 'bootstrap',
         ]);
         DB::table('categories')->insert([
             'name' => 'JavaScript',
             'description' => 'This is just a description, by the way.. Lorem ipsum dolor sit amet.',
-            'parent_id' => 0,
+            'parent_id' => NULL,
             'slug' => 'javascript',
         ]);
         DB::table('categories')->insert([
             'name' => 'PHP',
             'description' => 'This is just a description, by the way.. Lorem ipsum dolor sit amet.',
-            'parent_id' => 0,
+            'parent_id' => NULL,
             'slug' => 'php',
         ]);
         DB::table('categories')->insert([
