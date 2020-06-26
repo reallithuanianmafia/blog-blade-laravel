@@ -1,4 +1,4 @@
-<div class="col-md-4 playlist">
+<div class="col-md-4 playlist" style="z-index: 0">
     <div class="list-group">
         <a class="list-group-item list-group-item-action text-center">Playlist</a>
         @if(count($posts)>0)

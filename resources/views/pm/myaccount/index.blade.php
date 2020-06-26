@@ -12,12 +12,21 @@
 <div class="col-md-8">
     <div class="card" >
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <div class="text-center">
-            <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <h5 class="card-title">Basic Information</h5>
+          <div class="form-group">
+            <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" value="{{auth()->user()->name}}">
+          </div>
+          <div class="form-group">
+            <label for="name">Email</label>
+          <input type="email" class="form-control" id="name" value="{{auth()->user()->email}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Bio</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-dark">
           </div>
         </div>
       </div>

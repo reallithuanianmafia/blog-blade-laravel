@@ -17,7 +17,8 @@ class PmHomesController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'DESC')->get();
-        return view('pm.index', compact('posts'));
+        $series = Series::orderBy('id', 'DESC')->get();
+        return view('pm.index', compact('posts', 'series'));
     }
 
     /**

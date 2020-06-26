@@ -30,6 +30,11 @@
         <a href="{{route('pm.categories.index')}}">Categories</a>
         <a href="{{route('pm.series.index')}}">Series</a>
         <a href="{{route('pm.categories.index')}}">Contact</a>
-        <a href="{{route('login')}}">Login/Register</a>
+        @if(Auth::check())
+        <a href="{{route('pm.myaccount.index')}}">My Account</a>
+        @else
+            <a href="{{route('login')}}">Login/Register</a>
+        @endif
+        
     </div>
 </div>

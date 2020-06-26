@@ -10,4 +10,12 @@ class PmMyAccountsController extends Controller
     {
         return view('pm.myaccount.index');
     }
+    public function newpassword()
+    {
+        return view('pm.myaccount.newpassword');
+    }
+    public function dangerous()
+    {
+        return view('pm.myaccount.dangerous');
+    }
 }
