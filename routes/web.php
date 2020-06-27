@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Login
  */
-    Auth::routes(['register' => true]);
+    Auth::routes(['register' => false]);
 /**
  * Public Manager
  */
