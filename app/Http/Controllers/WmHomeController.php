@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use App\User;
 class WmHomeController extends Controller
 {
     /**
@@ -13,7 +14,14 @@ class WmHomeController extends Controller
      */
     public function index()
     {
-        return view('wm.home');
+        dd(auth()->user()->hasRole('name', 'administrator'));
+        if(auth()->user()->hasRole('name', ['administrator']))
+        {
+            return '1';
+        }
+        return '0';
+        //return auth()->user()->hasRole('name', ['administrator']);
+        //return view('wm.home');
     }
 
     /**

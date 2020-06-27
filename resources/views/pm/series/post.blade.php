@@ -1,3 +1,4 @@
++++++++++++++++++++
 @extends('layouts.pmseries')
 @section('title'){{$series->name}} @endsection
 @section('breadcrumb')
@@ -17,7 +18,7 @@
         <ul class="list-group list-group-flush card-list-group">
             <li class="list-group-item article-category"><a href="#"><ion-icon name="briefcase-sharp"></ion-icon> {{$post->category->name}}</a></li>
             @if($post->series()->exists()) 
-            <li class="list-group-item article-category"><a href="{{route('pm.series.post', [$post->series->name, $post->slug])}}"><ion-icon name="albums"></ion-icon> {{$post->series->name}} <span class="badge badge-pill badge-dark">Series</span></a></li>
+            <li class="list-group-item article-category"><a href="{{route('pm.series.show', $post->series->slug)}}"><ion-icon name="albums"></ion-icon> {{$post->series->name}} <span class="badge badge-pill badge-dark">Series</span></a></li>
             @else 
             <li class="list-group-item article-category"><a href="{{route('pm.posts.show', $post->slug)}}"><ion-icon name="albums"></ion-icon> Single Article </a></li> 
             @endif
@@ -44,9 +45,7 @@
                 </form>
             </div>
         </div>
-       
       </div>
-      
 </div>
 @endsection
 @section('sidebar')
