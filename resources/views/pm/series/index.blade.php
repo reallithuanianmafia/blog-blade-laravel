@@ -5,20 +5,17 @@
 <li class="breadcrumb-item active" aria-current="page">Series</li>
 @endsection
 @section('content')
+<div class="col-md-12">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 text-center">Series</h1>
+        <p class="lead text-center">This is the section where you can find all series.</p>
+      </div>
+    </div>
+</div>
 @if(count($series)>0)
 @foreach($series as $oneserie)
-<div class="col-md-12">
-<div class="list-group" id="list-tab" role="tablist">
-  <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{{route('pm.series.show', $oneserie->slug)}}" role="tab" aria-controls="home">
-    <div class="card-header">
-      {{$oneserie->name}} <span class="badge badge-pill badge-dark">{{$oneserie->category->name}}</span>
-    </div>
-    <div class="card-body">
-      <p>{{$oneserie->description}}</p>
-    </div>
-  </a>
-</div>
-</div>
+  @include('pminc.seriesshowcase')
 @endforeach
 @else
 <div class="col-md-12">

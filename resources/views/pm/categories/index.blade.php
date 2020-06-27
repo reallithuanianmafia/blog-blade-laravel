@@ -5,20 +5,17 @@
 <li class="breadcrumb-item active" aria-current="page">Categories</li>
 @endsection
 @section('content')
+<div class="col-md-12">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 text-center">Categories</h1>
+        <p class="lead text-center">This is the section where you can find all categories.</p>
+      </div>
+    </div>
+</div>
 @if(count($categories)>0)
 @foreach($categories as $category)
-<div class="col-md-12">
-<div class="list-group" id="list-tab" role="tablist">
-  <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="{{route('pm.categories.show', $category->slug)}}" role="tab" aria-controls="home">
-    <div class="card-header">
-      {{$category->name}}
-    </div>
-    <div class="card-body">
-      <p>{{$category->description}}</p>
-    </div>
-  </a>
-</div>
-</div>
+  @include('pminc.categoriesshowcase')
 @endforeach
 @else
 <div class="col-md-12">

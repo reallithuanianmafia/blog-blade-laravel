@@ -25,7 +25,11 @@
                       <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group">
-                      <label for="description">Content</label>
+                      <label for="description">Description</label>
+                      <input type="text" class="form-control" id="description" name="description">
+                    </div>
+                    <div class="form-group">
+                      <label for="content">Content</label>
                       <textarea name="content" id="editor"></textarea>
                     </div>
                     <script>
@@ -34,15 +38,13 @@
                           .catch( error => {
                               console.error( error );
                           } );
-
-                        
                   </script>
                     <div class="form-group">
-                      <label for="description">Category</label>
+                      <label for="category">Category</label>
                       {!! $categories_dropdown !!}
                     </div>
                     <div class="form-group">
-                      <label for="description">Status</label>
+                      <label for="status">Status</label>
                       <select class="form-control" name="status">
                         <option value="0">0 Signal</option>
                         <option value="1">Activate</option>
@@ -93,10 +95,6 @@
                 <div class="card">
                   <h5 class="card-header">Search engine optimization (SEO)</h5>
                   <div class="card-body">
-                    <div class="form-group">
-                      <label>Description</label>
-                      <input type="text" class="form-control" name="description">
-                    </div>
                     <div class="form-group">
                       <label>Keywords</label>
                       <input type="text" class="form-control" name="keywords">

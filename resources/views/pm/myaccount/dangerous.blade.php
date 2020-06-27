@@ -12,8 +12,10 @@
 @section('content')
 <div class="col-md-8">
     <div class="card" >
-        <div class="card-body">
+      <div class="card-header">
         <h5 class="card-title">Dangerous</h5>
+      </div>
+        <div class="card-body">
           <div class="form-group">
             <input type="submit" value="Delete My Account" class="btn btn-danger">
           </div>

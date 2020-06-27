@@ -44,4 +44,8 @@ class Post extends Model
             return $this->series->name;
         }
     }
+    public function commentsCount()
+    {
+        return $this->comments->count();
+    }
 }

@@ -42,6 +42,7 @@ Route::middleware('throttle:180|360,1')->group(function () {
     Route::get('/contact', 'PmContactsController@show')->name('pm.contacts.show');
     // My Account
     Route::get('/myaccount', 'PmMyAccountsController@index')->name('pm.myaccount.index');
+    Route::get('/myaccount/basicsettings', 'PmMyAccountsController@basicsettings')->name('pm.myaccount.basicsettings');
     Route::get('/myaccount/newpassword', 'PmMyAccountsController@newpassword')->name('pm.myaccount.newpassword');
     Route::get('/myaccount/dangerous', 'PmMyAccountsController@dangerous')->name('pm.myaccount.dangerous');
 });

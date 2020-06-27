@@ -10,26 +10,28 @@
 @section('content')
 @section('content')
 <div class="col-md-8">
-    <div class="card" >
-        <div class="card-body">
-        <h5 class="card-title">Basic Information</h5>
-          <div class="form-group">
-            <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" value="{{auth()->user()->name}}">
-          </div>
-          <div class="form-group">
-            <label for="name">Email</label>
-          <input type="email" class="form-control" id="name" value="{{auth()->user()->email}}">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Bio</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-dark">
-          </div>
-        </div>
-      </div>
+  <div class="" style="margin-top: 2em;">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action disabled text-center">Notifications</a>
+      <a href="#" class="list-group-item list-group-item-action">
+        Cras justo odio
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+    </div>
+</div>
+<div class="" style="margin-top: 2em;">
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action disabled text-center">My Later Reading List</a>
+    <a href="#" class="list-group-item list-group-item-action">
+      Cras justo odio
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  </div>
+</div>
 </div>
 @endsection
 @endsection

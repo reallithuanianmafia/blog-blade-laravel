@@ -34,7 +34,7 @@
         <div class="list-group">
           @if(count($posts)>0)
           @foreach($posts as $post)
-            <a href="{{route('pm.posts.show', $post->slug)}}" class="list-group-item list-group-item-action">{{$post->name}}</a>
+            <a href="@if($post->series()->exists()) {{route('pm.series.post', [$post->series->slug, $post->slug])}} @else {{route('pm.posts.show', $post->slug)}} @endif" class="list-group-item list-group-item-action">{{$post->name}}</a>
           @endforeach
           @else
             <a class="list-group-item list-group-item-action">No data found.</a>

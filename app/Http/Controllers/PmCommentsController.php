@@ -23,6 +23,10 @@ class PmCommentsController extends Controller
         $comment->user_id = auth()->user()->id;
         $comment->post_id = $post->id;
         $comment->save();
+        if($post->series()->exists())
+        {
+            return redirect(route('pm.series.post', [$post->series->slug, $post->slug]));
+        }
         return redirect(route('pm.posts.show', $post->slug));
     }
 }
