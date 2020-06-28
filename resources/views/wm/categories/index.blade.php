@@ -11,34 +11,42 @@
         </nav>
       </div>
       <div class="col-md-12">
-        <a href="{{route('wm.categories.create')}}" class="btn btn-primary form-control">New</a>
-      </div>
-        <div class="col-md-12">
-            <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Parent ID</th>
-                    <th>Function</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($categories as $category)
-                  <tr>
-                    <th scope="row">{{$category->id}}</th>
-                    <td>{{$category->name}}</td>
-                    <td>{!!$category->checkParent()!!}</td>
-                    <td>
-                      {{Form::open(array('method' => 'DELETE', 'action' => ['WmCategoriesController@destroy', $category->id]))}}
-                        <input type="submit" class="btn btn-danger" value="Delete">
-                      {{Form::close()}}
-                    </td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+        <div class="jumbotron">
+          <h1 class="display-4">Categories</h1>
         </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header"><a class="btn btn-primary btn-sm" href="{{route('wm.categories.create')}}">New</a></div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Parent Category</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($categories as $category)
+                <tr>
+                  <td>{{$category->name}}</td>
+                  <td>{!!$category->checkParent()!!}</td>
+                  <td><a href="{{route('wm.categories.edit', $category->slug)}}" class="btn btn-warning">Edit</a></td>
+                  <td>
+                    {{Form::open(array('method' => 'DELETE', 'action' => ['WmCategoriesController@destroy', $category->id]))}}
+                      <input type="submit" class="btn btn-danger" value="Delete">
+                    {{Form::close()}}
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 @endsection

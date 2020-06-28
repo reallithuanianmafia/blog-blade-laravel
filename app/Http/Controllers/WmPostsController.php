@@ -10,6 +10,10 @@ use App\Tag;
 use Str;
 class WmPostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Post::class, 'post');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -101,9 +105,12 @@ class WmPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $series = Series::all();
+        $tags = Tag::all();
+        return view('wm.posts.edit', compact('post', 'series', 'tags'));
     }
 
     /**

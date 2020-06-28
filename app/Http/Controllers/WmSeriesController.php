@@ -9,6 +9,10 @@ use App\Post;
 use Str;
 class WmSeriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Series::class, 'series');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +20,8 @@ class WmSeriesController extends Controller
      */
     public function index()
     {
-        $allseries = Series::all();
-        return view('wm.series.index', compact('allseries'));
+        $series = Series::all();
+        return view('wm.series.index', compact('series'));
     }
 
     /**
@@ -55,11 +59,15 @@ class WmSeriesController extends Controller
     public function store(Request $request)
     {
         $data = request()->all();
+        if(!$data['slug'])
+        {
+            $data['slug'] = Str::slug($data['name'].'-'.Str::random(2));
+        }
         Series::create([
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category_id'],
-            'slug' => Str::slug($data['name']),
+            'slug' => $data['slug'],
         ]);
         return redirect(route('wm.series.index'));
     }
@@ -81,9 +89,10 @@ class WmSeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $oneserie = Series::where('slug', $slug)->firstOrFail();
+        return view('wm.series.edit', compact('oneserie'));
     }
 
     /**
@@ -93,9 +102,9 @@ class WmSeriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        return $slug;
     }
 
     /**

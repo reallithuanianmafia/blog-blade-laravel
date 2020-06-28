@@ -38,12 +38,11 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container-fluid wm-container">
-
+  <main class="container-fluid wm-container">
     <div class="row">
-
       <div class="offset-lg-1 col-lg-2 mt-4">
         <div class="list-group my-nav-list">
+          <a href="{{route('wm.home')}}" class="list-group-item {{ Route::is('wm.home') ? 'active' : '' }}">Private Office</a>
           <a href="{{route('wm.categories.index')}}" class="list-group-item {{ Route::is('wm.categories.index') ? 'active' : '' }}">Categories</a>
           <a href="{{route('wm.series.index')}}" class="list-group-item {{ Route::is('wm.series.index') ? 'active' : '' }}">Series</a>
           <a href="{{route('wm.posts.index')}}" class="list-group-item {{ Route::is('wm.posts.index') ? 'active' : '' }}">Posts</a>
@@ -54,13 +53,12 @@
       <div class="col-lg-8 mt-4">
         @yield('content')
       </div>
-
-      
       <!-- /.col-lg-9 -->
-
     </div>
+  </main>
 
-  </div>
+  @include('wminc.footer')
+  
   <!-- /.container -->
 
 

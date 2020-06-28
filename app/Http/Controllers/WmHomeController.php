@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Category;
+use App\Series;
+use App\Post;
+use App\Tag;
 use App\User;
 class WmHomeController extends Controller
 {
@@ -14,79 +18,18 @@ class WmHomeController extends Controller
      */
     public function index()
     {
-        dd(auth()->user()->hasRole('name', 'administrator'));
-        if(auth()->user()->hasRole('name', ['administrator']))
-        {
-            return '1';
-        }
-        return '0';
+        $categories_count = Category::count();
+        $series_count = Series::count();
+        $posts_count = Post::count();
+        $tags_count = Tag::count();
+        $users_count = User::count();
         //return auth()->user()->hasRole('name', ['administrator']);
-        //return view('wm.home');
+        return view('wm.home', compact('categories_count', 'series_count', 'posts_count', 'tags_count', 'users_count'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function test()
     {
-        //
+        return auth()->user()->hasRole('content creator');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -10,37 +10,43 @@
           </ol>
         </nav>
       </div>
-      <div class="col-md-12">
-        <a href="{{route('wm.series.create')}}" class="btn btn-primary form-control">New</a>
-      </div>
         <div class="col-md-12">
-            <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Category</th>
-                    <th>Function</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @foreach($allseries as $series)
-                  <tr>
-                    <th scope="row">{{$series->id}}</th>
-                    <td>{{$series->name}}</td>
-                    <td>{{$series->description}}</td>
-                    <td><span class="badge badge-primary">{{$series->category->name}}</span></td>
-                    <td>
-                      {{Form::open(array('method' => 'DELETE', 'action' => ['WmSeriesController@destroy', $series->id]))}}
-                        <input type="submit" class="btn btn-danger" value="Delete">
-                      {{Form::close()}}
-                    </td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+          <div class="jumbotron">
+            <h1 class="display-4">Series</h1>
+          </div>
         </div>
+
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header"><a class="btn btn-primary btn-sm" href="{{route('wm.series.create')}}">New</a></div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($series as $oneserie)
+                <tr>
+                  <td>{{$oneserie->name}}</td>
+                <td>{{$oneserie->category->name}}</td>
+                  <td><a href="{{route('wm.series.edit', $oneserie->slug)}}" class="btn btn-warning">Edit</a></td>
+                  <td>
+                    {{Form::open(array('method' => 'DELETE', 'action' => ['WmCategoriesController@destroy', $oneserie->id]))}}
+                      <input type="submit" class="btn btn-danger" value="Delete">
+                    {{Form::close()}}
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 @endsection

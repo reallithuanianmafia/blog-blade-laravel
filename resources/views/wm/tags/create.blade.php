@@ -11,7 +11,11 @@
             </ol>
           </nav>
         </div>
-
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1 class="display-4">New Tag</h1>
+          </div>
+        </div>
         <div class="col-md-12">
           {{Form::open(array('method' => 'POST', 'action' => 'WmTagsController@store'))}}
                 <div class="card" style="margin-bottom: 3%;">

@@ -8,8 +8,13 @@ use App\Series;
 use App\Post;
 use Auth;
 use Str;
+use Gate;
 class WmCategoriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Category::class, 'category');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -52,25 +57,22 @@ class WmCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::check())
+        $data = request()->all();
+        if($data['parent_id'] == 0)
         {
-            $data = request()->all();
-            if($data['parent_id'] == 0)
-            {
-                $data['parent_id'] = NULL;
-            }
-            Category::create([
-                'name' => $data['name'],
-                'description' => $data['description'],
-                'parent_id' => $data['parent_id'],
-                'slug' => Str::slug($data['name']),
-            ]);
-            return redirect(route('wm.categories.index'));
+            $data['parent_id'] = NULL;
         }
-        else
+        if(!$data['slug'])
         {
-            return 'motherfucker kish';
+            $data['slug'] = Str::slug($data['name'].'-'.Str::random(2));
         }
+        Category::create([
+            'name' => $data['name'],
+            'description' => $data['description'],
+            'parent_id' => $data['parent_id'],
+            'slug' => $data['slug'],
+        ]);
+        return redirect(route('wm.categories.index'));
         
     }
 
@@ -91,9 +93,10 @@ class WmCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $category = Category::where('slug', $slug)->firstOrFail();
+        return view('wm.categories.edit', compact('category'));
     }
 
     /**
@@ -103,9 +106,9 @@ class WmCategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        return $slug;
     }
 
     /**

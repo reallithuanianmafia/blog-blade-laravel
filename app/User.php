@@ -51,8 +51,11 @@ class User extends Authenticatable
     {
         if($this->roles()->whereIn('name', [$role])->first())
         {
-            return 'true';
+            return true;
         }
-        return 'false';
+        else
+        {
+            return false;
+        }
     }
 }

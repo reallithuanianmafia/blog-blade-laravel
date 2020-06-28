@@ -14,7 +14,11 @@
             </ol>
           </nav>
         </div>
-
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1 class="display-4">New Post</h1>
+          </div>
+        </div>
         <div class="col-md-12">
           {{Form::open(array('method' => 'POST', 'action' => 'WmPostsController@store'))}}
                 <div class="card" style="margin-bottom: 3%;">
@@ -46,8 +50,8 @@
                     <div class="form-group">
                       <label for="status">Status</label>
                       <select class="form-control" name="status">
-                        <option value="0">0 Signal</option>
-                        <option value="1">Activate</option>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
                       </select>
                     </div>
                   </div>

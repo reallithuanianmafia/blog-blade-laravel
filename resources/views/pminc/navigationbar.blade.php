@@ -12,11 +12,17 @@
     </nav>
     <div class="user_panel">
         @if(!Auth::check())
-        <a href="#"><button class="nav-button">Login</button></a>
-        <a href="#"><button class="nav-button">Register</button></a>
+        <a href="{{route('login')}}"><button class="nav-button">Login</button></a>
+        <a href="{{route('register')}}"><button class="nav-button">Register</button></a>
         @else
-        <a href="{{route('pm.myaccount.index')}}"><button class="nav-button">My Account</button></a>
-        <a href="{{route('wm.home')}}"><button class="nav-button">Web Manager</button></a>
+            <a href="{{route('pm.myaccount.index')}}"><button class="nav-button">My Account</button></a>
+            @can('view-webmanager-button')
+                <a href="{{route('wm.home')}}"><button class="nav-button">Web Manager</button></a>
+            @endcan
+            {{Form::open(array('route' => 'logout', 'method' => 'POST', 'style' => 'display: inline-block;'))}}
+                <button type="submit" class="btn btn-danger btn-sm">Log Out</button>
+            {{Form::close()}}
+        
         @endif
     </div>
     <div class="openDiv">

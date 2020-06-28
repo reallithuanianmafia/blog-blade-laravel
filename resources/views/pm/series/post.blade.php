@@ -1,4 +1,3 @@
-+++++++++++++++++++
 @extends('layouts.pmseries')
 @section('title'){{$series->name}} @endsection
 @section('breadcrumb')
