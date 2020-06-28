@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * Public Manager
  */
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::name('pm.')->group(function () {
         // Home
     Route::get('/' , 'PmHomesController@index')->name('home');
