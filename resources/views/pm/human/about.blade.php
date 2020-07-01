@@ -8,8 +8,7 @@
 <div class="col-md-12">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4 text-center">About</h1>
-          <p class="lead text-center">This is the section where you can find data about us.</p>
+          <h1 class="display-4 text-center"><img src="{{URL::asset('logos/logoforabout.png')}}" style="width: 5em;"></h1>
         </div>
       </div>
 </div>

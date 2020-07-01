@@ -1,6 +1,6 @@
 <header>
     <div>
-        <a href="{{route('pm.home')}}" class="brand-logo"><button class="nav-button">AzarGuliyev</button></a>
+    <a href="{{route('pm.home')}}" class="brand-logo"><img class="logo-img" src="{{URL::asset('logos/mylogo.png')}}"></a>
     </div>
     <nav>
         <ul class="nav-links desktop__menu">
@@ -20,7 +20,7 @@
                 <a href="{{route('wm.home')}}"><button class="nav-button">Web Manager</button></a>
             @endcan
             {{Form::open(array('route' => 'logout', 'method' => 'POST', 'style' => 'display: inline-block;'))}}
-                <button type="submit" class="btn btn-danger btn-sm">Log Out</button>
+                <button type="submit" class="btn btn-danger btn-sm logout-button">Log Out</button>
             {{Form::close()}}
         @endif
     </div>
@@ -37,6 +37,9 @@
         <a href="{{route('pm.categories.index')}}">Contact</a>
         @if(Auth::check())
         <a href="{{route('pm.myaccount.index')}}">My Account</a>
+        @can('view-webmanager-button')
+        <a href="{{route('wm.home')}}">Web Manager</a>
+        @endcan
         @else
             <a href="{{route('login')}}">Login/Register</a>
         @endif

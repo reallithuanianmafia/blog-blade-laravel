@@ -58,7 +58,7 @@ header
 
 .nav-links li a:hover
 {
-    color: red;
+    color: #FFC706;
 }
 
 .nav-button
@@ -72,9 +72,46 @@ header
 
 .nav-button:hover
 {
-    color: red;
+    color: #FFC706;
 }
-
+.logo-img
+{
+    width: 20em;
+}
+.logout-button
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+@media only screen and (max-width: 600px) 
+{
+    .logo-img
+    {
+        width: 15em;
+    }
+}
+@media only screen and (max-width: 560px) 
+{
+    .logo-img
+    {
+        width: 12em;
+    }
+}
+@media only screen and (max-width: 500px) 
+{
+    .logo-img
+    {
+        width: 10em;
+    }
+}
+@media only screen and (max-width: 350px) 
+{
+    .logo-img
+    {
+        width: 8em;
+    }
+}
 @media only screen and (max-width: 1260px) {
     .user_panel, .desktop__menu {
       display: none;
@@ -135,7 +172,7 @@ header
 }
 .overlay a:hover
 {
-    color: red;
+    color: #FFC706;
 }
 .overlay .close
 {
@@ -423,7 +460,10 @@ nav .breadcrumb li a
     margin: 2em 0;
 }
 /* Comment End */
-
+ul
+{
+    margin: 0;
+}
 /* Footer List */
 .footer-list ul
 {
