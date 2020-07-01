@@ -22,7 +22,6 @@
             {{Form::open(array('route' => 'logout', 'method' => 'POST', 'style' => 'display: inline-block;'))}}
                 <button type="submit" class="btn btn-danger btn-sm">Log Out</button>
             {{Form::close()}}
-        
         @endif
     </div>
     <div class="openDiv">

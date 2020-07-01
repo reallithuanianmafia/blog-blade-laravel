@@ -6,6 +6,10 @@
         </div>
         <div class="card-body">
           <p>{{$oneserie->description}}</p>
+         <div style="background: #7171711a; padding: 0 0.5em; height: 100%">
+          <p class="lead">{{$oneserie->posts()->count()}} posts inside</p>
+         </div>
+          
         </div>
       </a>
     </div>

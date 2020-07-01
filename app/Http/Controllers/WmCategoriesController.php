@@ -11,10 +11,6 @@ use Str;
 use Gate;
 class WmCategoriesController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Category::class, 'category');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -33,6 +29,7 @@ class WmCategoriesController extends Controller
      */
     public function create()
     {
+        $this->authorize('create' , Category::class);
         $categories = Category::where('parent_id', '=', NULL)->get();
         $categories_dropdown = "<select name='parent_id' class='form-control'><option value='0'>Set as Main Category</option>";
         foreach($categories as $category)
@@ -57,6 +54,7 @@ class WmCategoriesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create' , Category::class);
         $data = request()->all();
         if($data['parent_id'] == 0)
         {

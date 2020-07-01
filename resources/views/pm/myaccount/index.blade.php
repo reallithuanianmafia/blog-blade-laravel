@@ -13,23 +13,11 @@
   <div class="" style="margin-top: 2em;">
     <div class="list-group">
       <a href="#" class="list-group-item list-group-item-action disabled text-center">Notifications</a>
-      <a href="#" class="list-group-item list-group-item-action">
-        Cras justo odio
-      </a>
-      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
     </div>
 </div>
 <div class="" style="margin-top: 2em;">
   <div class="list-group">
     <a href="#" class="list-group-item list-group-item-action disabled text-center">My Later Reading List</a>
-    <a href="#" class="list-group-item list-group-item-action">
-      Cras justo odio
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-    <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-    <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
   </div>
 </div>
 </div>

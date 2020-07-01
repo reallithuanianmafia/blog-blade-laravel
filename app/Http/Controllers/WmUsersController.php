@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Builder;
 use App\User;
 class WmUsersController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(User::class, 'user');
-    }
     /**
      * Display a listing of the resource.
      *

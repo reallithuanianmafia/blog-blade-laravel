@@ -9,10 +9,6 @@ use App\Post;
 use Str;
 class WmSeriesController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Series::class, 'series');
-    }
     /**
      * Display a listing of the resource.
      *

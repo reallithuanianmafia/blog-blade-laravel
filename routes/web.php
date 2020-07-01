@@ -25,7 +25,7 @@ Route::name('pm.')->group(function () {
         // Home
     Route::get('/' , 'PmHomesController@index')->name('home');
         // Do not touch to this shit.
-    
+    Route::get('/search', 'PmSearchController@index');
         // Categories
     Route::get('/categories', 'PmCategoriesController@index')->name('categories.index');
     Route::get('/categories/{slug}', 'PmCategoriesController@show')->name('categories.show');
@@ -37,16 +37,24 @@ Route::name('pm.')->group(function () {
     Route::get('/posts', 'PmPostsController@index')->name('posts.index');
     Route::get('/posts/{slug}', 'PmPostsController@show')->name('posts.show');
         // Human
-    Route::get('/about', 'HumansController@about')->name('human.about');
+    Route::get('/human', 'HumansController@index')->name('human.index');
+    Route::get('/human/about', 'HumansController@about')->name('human.about');
+    Route::get('/human/privacy', 'HumansController@privacy')->name('human.privacy');
     Route::get('/portfolio', 'HumansController@portfolio')->name('human.portfolio');
-    Route::get('/contact', 'PmContactsController@show')->name('contacts.show');
-
+    Route::get('/human/contact', 'HumansController@contact')->name('human.contact');
+    Route::post('/human/contact', 'HumansController@store')->name('human.contact.store');
+        //
     Route::post('/puttingacomment/{postslug}', 'PmCommentsController@store')->name('pm.comments.store');
         // My Account
-    Route::get('/myaccount', 'PmMyAccountsController@index')->name('myaccount.index');
-    Route::get('/myaccount/basicsettings', 'PmMyAccountsController@basicsettings')->name('myaccount.basicsettings');
-    Route::get('/myaccount/newpassword', 'PmMyAccountsController@newpassword')->name('myaccount.newpassword');
-    Route::get('/myaccount/dangerous', 'PmMyAccountsController@dangerous')->name('myaccount.dangerous');
+    Route::prefix('/myaccount')->middleware('auth')->group(function () {
+        Route::get('/', 'PmMyAccountsController@index')->name('myaccount.index');
+        Route::get('basicsettings', 'PmMyAccountsController@basicsettings')->name('myaccount.basicsettings');
+        Route::get('newpassword', 'PmMyAccountsController@newpassword')->name('myaccount.newpassword');
+        Route::put('newpassword', 'PmMyAccountsController@newpasswordstore')->name('myaccount.newpassword.store');
+        Route::get('dangerous', 'PmMyAccountsController@dangerous')->name('myaccount.dangerous');
+        Route::delete('dangerous', 'PmMyAccountsController@dangerousstore')->name('myaccount.dangerous.destroy');
+    });
+    
 });
 /**
  * Web Manager

@@ -16,9 +16,11 @@
         <h5 class="card-title">Dangerous</h5>
       </div>
         <div class="card-body">
+          {{Form::open(array('method' => 'DELETE', 'action' => 'PmMyAccountsController@dangerousstore'))}}
           <div class="form-group">
             <input type="submit" value="Delete My Account" class="btn btn-danger">
           </div>
+          {{Form::close()}}
         </div>
       </div>
 </div>

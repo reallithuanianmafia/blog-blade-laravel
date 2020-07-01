@@ -9,10 +9,6 @@ use App\Post;
 use App\Tag;
 class WmTagsController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Tag::class, 'tag');
-    }
     /**
      * Display a listing of the resource.
      *

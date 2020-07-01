@@ -18,7 +18,7 @@ class CategoryPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->hasRole('moderator');
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoryPolicy
      */
     public function view(User $user, Category $category)
     {
-        return $user->hasRole('moderator');
+        
     }
 
     /**
@@ -51,7 +51,7 @@ class CategoryPolicy
      * @param  \App\Category  $category
      * @return mixed
      */
-    public function update(User $user, Category $category)
+    public function update(User $user)
     {
         return $user->hasRole('moderator');
     }
@@ -77,7 +77,7 @@ class CategoryPolicy
      */
     public function restore(User $user, Category $category)
     {
-        return $user->hasRole('moderator');
+        return false;
     }
 
     /**
@@ -89,6 +89,6 @@ class CategoryPolicy
      */
     public function forceDelete(User $user, Category $category)
     {
-        return $user->hasRole('moderator');
+        return false;
     }
 }

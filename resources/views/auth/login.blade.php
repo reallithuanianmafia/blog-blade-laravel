@@ -6,22 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Hello, dear visitor!</h4>
-                        <p>Here is the back-end sir rolling on and thanks for understanding.</p>
-                        <hr>
-                        <p class="mb-0">If you would like to look at front-end layout which will be used in Blog, <a href="http://test.azarguliyev.com/">Click Here</a></p>
-                      </div>
-                </div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="alert alert-primary" role="alert">
-                            Developer sign-in system.
-                          </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

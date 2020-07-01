@@ -376,6 +376,7 @@ nav .breadcrumb li a
 /* Comment */
 .comment-list
 {
+    padding: 0;
     list-style: none;
 }
 .comment-list li
@@ -433,6 +434,15 @@ nav .breadcrumb li a
     display: inline-block;
     color: white;
 }
+.footer-col
+{
+    margin-bottom: 2em;
+}
+.footer-col a
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: uppercase;
+}
 @media only screen and (max-width: 600px) 
 {
     .footer-p
@@ -440,4 +450,8 @@ nav .breadcrumb li a
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 1em
     }
+}
+.col-margin
+{
+    margin-bottom: 2em;
 }

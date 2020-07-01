@@ -10,10 +10,6 @@ use App\Tag;
 use Str;
 class WmPostsController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Post::class, 'post');
-    }
     /**
      * Display a listing of the resource.
      *

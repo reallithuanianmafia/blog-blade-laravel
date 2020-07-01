@@ -1,4 +1,4 @@
-<div class="col-md-6 article-col">
+<div class="col-md-12 col-lg-6 article-col">
     <div class="card article-card">
         <div class="card-body card_body_fixed_height article-card-body">
             <a href="@if($post->series()->exists()) {{route('pm.series.post', [$post->series->slug, $post->slug])}} @else {{route('pm.posts.show', $post->slug)}} @endif" class="card-title card-body-title"><h5>{{$post->name}}</h5></a>

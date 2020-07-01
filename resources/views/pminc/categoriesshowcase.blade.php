@@ -6,6 +6,10 @@
         </div>
         <div class="card-body">
           <p>{{$category->description}}</p>
+          <div style="background: #7171711a; padding: 0 0.5em; height: 100%">
+            <p class="lead">{{$category->series()->count()}} series inside</p>
+            <p class="lead">{{$category->posts()->count()}} posts inside</p>
+           </div>
         </div>
       </a>
     </div>

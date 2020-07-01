@@ -14,23 +14,39 @@
     <div class="card" >
       <div class="card-header">
         <h5 class="card-title">New Password Request</h5>
+        @if(session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
       </div>
         <div class="card-body">
+          {{Form::open(array('method' => 'PUT', 'action' => 'PmMyAccountsController@newpasswordstore'))}}
           <div class="form-group">
           <label for="oldpassword">Old Password</label>
-          <input type="password" class="form-control" id="oldpassword">
+          <input type="password" class="form-control" name="oldpassword">
           </div>
           <div class="form-group">
           <label for="newpassword">New Password</label>
-          <input type="password" class="form-control" id="newpassword">
+          <input type="password" class="form-control" name="newpassword">
           </div>
           <div class="form-group">
           <label for="newpasswordconfirmation">New Password Confirmation</label>
-          <input type="password" class="form-control" id="newpasswordconfirmation">
+          <input type="password" class="form-control" name="newpasswordconfirmation">
           </div>
           <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-dark">
           </div>
+          {{Form::close()}}
         </div>
       </div>
 </div>

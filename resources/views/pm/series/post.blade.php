@@ -15,7 +15,7 @@
           <p class="card-text card-body-description">{!! $post->content !!}</p>
         </div>
         <ul class="list-group list-group-flush card-list-group">
-            <li class="list-group-item article-category"><a href="#"><ion-icon name="briefcase-sharp"></ion-icon> {{$post->category->name}}</a></li>
+            <li class="list-group-item article-category"><a href="{{route('pm.categories.show', $post->category->slug)}}"><ion-icon name="briefcase-sharp"></ion-icon> {{$post->category->name}}</a></li>
             @if($post->series()->exists()) 
             <li class="list-group-item article-category"><a href="{{route('pm.series.show', $post->series->slug)}}"><ion-icon name="albums"></ion-icon> {{$post->series->name}} <span class="badge badge-pill badge-dark">Series</span></a></li>
             @else 
