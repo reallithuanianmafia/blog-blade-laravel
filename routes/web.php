@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/sitemap', 'PmHomesController@sitemap');
 /**
  * Login
  */
@@ -53,6 +53,7 @@ Route::name('pm.')->group(function () {
         Route::put('newpassword', 'PmMyAccountsController@newpasswordstore')->name('myaccount.newpassword.store');
         Route::get('dangerous', 'PmMyAccountsController@dangerous')->name('myaccount.dangerous');
         Route::delete('dangerous', 'PmMyAccountsController@dangerousstore')->name('myaccount.dangerous.destroy');
+        Route::get('savedposts', 'PmMyAccountsController@savedpostsindex')->name('myaccount.savedposts.index');
     });
     
 });

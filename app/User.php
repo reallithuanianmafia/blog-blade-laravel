@@ -44,6 +44,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+    public function savedposts()
+    {
+        return $this->belongsToMany('App\SavedPost', 'saved_posts');
+    }
     /**
      * Role check
      */
@@ -58,4 +62,5 @@ class User extends Authenticatable
             return false;
         }
     }
+
 }

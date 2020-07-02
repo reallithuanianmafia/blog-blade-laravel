@@ -48,4 +48,8 @@ class Post extends Model
     {
         return $this->comments->count();
     }
+    public function savedposts()
+    {
+        return $this->belongsToMany('App\SavedPost','saved_posts');
+    }
 }

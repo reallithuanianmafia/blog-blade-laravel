@@ -1,5 +1,7 @@
 @extends('layouts.pm')
 @section('title'){{$post->name}} @endsection
+@section('metadescription'){{Str::limit($post->description, 100)}} @endsection
+@section('metakeywords'){{$post->category->name}} @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Posts</a></li>

@@ -1,5 +1,7 @@
 @extends('layouts.pm')
 @section('title')Privacy @endsection
+@section('metadescription')This is the section where you can find information related to your privacy on AZARGULIYEV COM @endsection
+@section('metakeywords')privacy, privacy policy, azarguliyev @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.human.index')}}">Human</a></li>

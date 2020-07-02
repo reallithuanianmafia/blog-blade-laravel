@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
+use App\SavedPost;
 use Hash;
 class PmMyAccountsController extends Controller
 {
@@ -68,5 +70,14 @@ class PmMyAccountsController extends Controller
             $user->delete();
             return redirect(route('pm.home'));
         }
+    }
+    public function savedpostsindex()
+    {
+        $user = User::find(1);
+        //$post = SavedPost::where('user_id', $user->id)->get();
+        return $user->savedposts();
+        
+        //$posts = Post::all();
+        return view('pm.myaccount.savedposts', compact('posts'));
     }
 }

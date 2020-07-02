@@ -1,5 +1,7 @@
 @extends('layouts.pm')
-@section('title')Posts @endsection
+@section('title')Series @endsection
+@section('metadescription')This is the section where you can find all series posted in AZARGULIYEV COM @endsection
+@section('metakeywords')all series, azarguliyev @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item active" aria-current="page">Series</li>

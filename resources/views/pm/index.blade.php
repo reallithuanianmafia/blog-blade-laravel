@@ -1,5 +1,7 @@
 @extends('layouts.pm')
 @section('title')Home @endsection
+@section('metadescription')An ordinary Full Stack Web Developer who is trying to write posts related to programming. @endsection
+@section('metakeywords')web programming, php, full stack web development @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item active" aria-current="page">Home</li>
 @endsection

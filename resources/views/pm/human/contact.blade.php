@@ -1,5 +1,7 @@
 @extends('layouts.pm')
 @section('title')Contact @endsection
+@section('metadescription')Contact Form section for guests and users. @endsection
+@section('metakeywords')contact, contact form, azarguliyev @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.human.index')}}">Human</a></li>

@@ -20,4 +20,8 @@ class PmHomesController extends Controller
         $series = Series::orderBy('id', 'DESC')->limit(10)->get();
         return view('pm.index', compact('posts', 'series'));
     }
+    public function sitemap()
+    {
+        return response()->view('pm.sitemap')->header('Content-Type', 'text/xml');
+    }
 }

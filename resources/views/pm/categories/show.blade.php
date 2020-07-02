@@ -2,11 +2,20 @@
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.categories.index')}}">Categories</a></li>
+@section('metadescription'){{Str::limit($category->description, 100)}} @endsection
+@section('metakeywords'){{$category->name}} @endsection
 <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
 @endsection
 @section('title'){{$category->name}} @endsection
 @section('content')
-
+<div class="col-md-12">
+  <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4 text-center">{{$category->name}}</h1>
+        <p class="lead text-center">This is the section where you can find all posts and series related to {{$category->name}} category.</p>
+      </div>
+    </div>
+</div>
 <div class="col-md-12">
   <div class="row">
     <div class="col-sm-6">
