@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
+    protected $table = "liked_posts";
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     public function post()
     {
         return $this->belongsTo('App\Post');

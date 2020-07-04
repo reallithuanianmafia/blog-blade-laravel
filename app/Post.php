@@ -33,6 +33,10 @@ class Post extends Model
     {
         return $this->hasMany('App\Comment');
     }
+    public function savedposts()
+    {
+        return $this->hasMany('App\SavedPost');
+    }
     public function seriesCheck()
     {
         if(!$this->series)
@@ -48,8 +52,6 @@ class Post extends Model
     {
         return $this->comments->count();
     }
-    public function savedposts()
-    {
-        return $this->belongsToMany('App\SavedPost','saved_posts');
-    }
+    
+    
 }

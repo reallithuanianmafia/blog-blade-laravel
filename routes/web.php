@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/sitemap', 'PmHomesController@sitemap');
 /**
  * Login
  */
@@ -54,6 +53,9 @@ Route::name('pm.')->group(function () {
         Route::get('dangerous', 'PmMyAccountsController@dangerous')->name('myaccount.dangerous');
         Route::delete('dangerous', 'PmMyAccountsController@dangerousstore')->name('myaccount.dangerous.destroy');
         Route::get('savedposts', 'PmMyAccountsController@savedpostsindex')->name('myaccount.savedposts.index');
+        Route::post('savedpostsstore/{post}', 'PmMyAccountsController@savedpostsstore')->name('myaccount.savedposts.store');
+        Route::get('likedposts', 'PmMyAccountsController@likedpostsindex')->name('myaccount.likedposts.index');
+        Route::post('likedpoststore/{post}', 'PmMyAccountsController@likedpostsstore')->name('myaccount.likedposts.store');
     });
     
 });

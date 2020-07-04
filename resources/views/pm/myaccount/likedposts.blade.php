@@ -3,7 +3,7 @@
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.myaccount.index')}}">My Account</a></li>
-<li class="breadcrumb-item active" aria-current="page">Saved Posts</li>
+<li class="breadcrumb-item active" aria-current="page">Liked Posts</li>
 @endsection
 @section('sidebar')
     @include('pminc.myaccnavbarforsidebar')
@@ -13,7 +13,7 @@
     <div class="col-md-12" style="padding: 0;">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title">Later Read (Saved Posts)</h5>
+                <h5 class="card-title">Liked Posts</h5>
             </div>
             <div class="card-body">
                 <div class="row">

@@ -1,7 +1,7 @@
 @extends('layouts.pmseries')
 @section('title'){{$post->name}} @endsection
 @section('metadescription'){{Str::limit($post->description, 100)}} @endsection
-@section('metakeywords'){{$post->series->name}},{{$post->name}} @endsection
+@section('metakeywords'){{$post->keywords}} @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item"><a href="{{route('pm.series.index')}}">Series</a></li>
@@ -29,22 +29,29 @@
         </ul>
         <div class="card-body footer">
             <div class="col-md-12" style="margin-bottom: 3%;">
-                <form>
-                    <button class="btn btn-light" type="submit" value="Like">Like <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
-                <!--<button class="btn btn-dark" type="submit" value="Like">Liked <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
-                 -->    
-                </form>
+                <div class="row">
+                    <div class="col-md-12" style="margin-bottom: 1%;">
+                        {{Form::open(array('method' => 'POST', 'action' => ['PmMyAccountsController@likedpostsstore', $post->id]))}}
+                        @if(auth()->user()->likes->whereIn('post_id', $post->id)->first())
+                        <button class="btn btn-dark"><ion-icon name="thumbs-up-outline"></ion-icon> Take your Like back</button>
+                        @else
+                        <button class="btn btn-light"><ion-icon name="thumbs-up-outline"></ion-icon> Like</button>
+                        @endif
+                        {{Form::close()}}
+                    </div>
+                    <div class="col-md-12" style="margin-bottom: 1%;">
+                        {{Form::open(array('method' => 'POST', 'action' => ['PmMyAccountsController@savedpostsstore', $post->id]))}}
+                        @if(auth()->user()->savedposts->whereIn('post_id', $post->id)->first())
+                        <button class="btn btn-dark" type="submit" value="Like">Remove from Read Later <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
+                        @else
+                        <button class="btn btn-primary" type="submit" value="Like">Add to Read Later <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
+                        @endif 
+                        {{Form::close()}}
+                    </div>
+                </div>
             </div>
-            <div class="col-md-12" style="margin-bottom: 3%;">
-                <form>
-                    <button class="btn btn-info" type="submit" value="Like">Add to Read Later <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
-                </form>
-            </div>
-            <div class="col-md-12" style="margin-bottom: 3%;">
-                <form>
-                    <button class="btn btn-danger" type="submit" value="Like">Report this article <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
-                </form>
-            </div>
+
+    
         </div>
       </div>
 </div>

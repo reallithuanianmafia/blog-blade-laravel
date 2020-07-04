@@ -46,7 +46,11 @@ class User extends Authenticatable
     }
     public function savedposts()
     {
-        return $this->belongsToMany('App\SavedPost', 'saved_posts');
+        return $this->hasMany('App\SavedPost');
+    }
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
     }
     /**
      * Role check

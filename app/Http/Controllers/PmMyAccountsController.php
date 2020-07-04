@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Post;
 use App\SavedPost;
+use App\Like;
 use Hash;
+use URL;
 class PmMyAccountsController extends Controller
 {
     public function index()
@@ -72,12 +74,61 @@ class PmMyAccountsController extends Controller
         }
     }
     public function savedpostsindex()
+    {   
+        $savedposts = SavedPost::with('post')
+          ->where('user_id', auth()->user()->id)
+          ->orderby('id', 'desc')->get();
+
+        return view('pm.myaccount.savedposts', compact('savedposts'));
+    }
+    public function savedpostsstore(Request $request, Post $post)
     {
-        $user = User::find(1);
-        //$post = SavedPost::where('user_id', $user->id)->get();
-        return $user->savedposts();
-        
-        //$posts = Post::all();
-        return view('pm.myaccount.savedposts', compact('posts'));
+        $user = auth()->user();
+        $savedposts = SavedPost::where('user_id', auth()->user()->id)
+            ->where('post_id', $post->id)->first();
+        if(!$savedposts)
+        {
+            $savedpost = new SavedPost;
+            $savedpost->user_id = auth()->user()->id;
+            $savedpost->post_id = $post->id;
+            $savedpost->save();
+            return redirect(URL::previous());
+        }
+        else
+        {
+            $savedposts->delete();
+            return redirect(URL::previous());
+        }
+        return redirect(URL::previous());
+
+    }
+    public function likedpostsindex()
+    {   
+        $savedposts = Like::with('post')
+          ->where('user_id', auth()->user()->id)
+          ->orderby('id', 'desc')->get();
+
+        return view('pm.myaccount.likedposts', compact('savedposts'));
+    }
+    public function likedpostsstore(Request $request, Post $post)
+    {
+        $user = auth()->user();
+        $likedpost = Like::where('user_id', auth()->user()->id)
+            ->where('post_id', $post->id)->first();
+        if(!$likedpost)
+        {
+            $likedpost = new Like;
+            $likedpost->user_id = auth()->user()->id;
+            $likedpost->post_id = $post->id;
+            $likedpost->save();
+            return redirect(URL::previous());
+        }
+        else
+        {
+            $likedpost->delete();
+            return redirect(URL::previous());
+        }
+        return redirect(URL::previous());
+
     }
 }
