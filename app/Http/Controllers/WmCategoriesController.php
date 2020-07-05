@@ -55,6 +55,14 @@ class WmCategoriesController extends Controller
     public function store(Request $request)
     {
         $this->authorize('create' , Category::class);
+        $request->validate([
+            'name' => 'required|unique:categories',
+            'description' => 'required',
+            'parent_id' => 'required',
+            'seodescription' => 'required',
+            'seokeywords' => 'required',
+            'status' => 'required'
+        ]);
         $data = request()->all();
         if($data['parent_id'] == 0)
         {
@@ -64,13 +72,20 @@ class WmCategoriesController extends Controller
         {
             $data['slug'] = Str::slug($data['name'].'-'.Str::random(2));
         }
+        if($data['slug'])
+        {
+            $data['slug'] = Str::slug($data['slug']);
+        }
         Category::create([
             'name' => $data['name'],
             'description' => $data['description'],
             'parent_id' => $data['parent_id'],
+            'seodescription' => $data['seodescription'],
+            'seokeywords' => $data['seokeywords'],
             'slug' => $data['slug'],
+            'status' => $data['status'],
         ]);
-        return redirect(route('wm.categories.index'));
+        return redirect(route('wm.categories.create'))->with('success', 'Category created successfully.');;
         
     }
 

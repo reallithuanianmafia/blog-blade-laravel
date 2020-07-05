@@ -16,7 +16,7 @@
           <h1 class="display-4">New Series</h1>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 card-col">
         <div class="card">
           <h5 class="card-header">Main Information</h5>
             <div class="card-body">
@@ -32,6 +32,16 @@
                 <div class="form-group">
                   <label for="category_id">Category</label>
                     {!! $categories_dropdown !!}
+                </div>
+                <div class="form-group">
+                  <label for="seodescription">Seo Meta Description</label>
+                  <input type="text" class="form-control" id="seodescription" name="seodescription" >
+                  <small class="form-text text-muted">Optional</small>
+                </div>
+                <div class="form-group">
+                  <label for="seokeywords">Seo Meta Keywords</label>
+                  <input type="text" class="form-control" id="seokeywords" name="seokeywords" >
+                  <small class="form-text text-muted">Optional</small>
                 </div>
                 <div class="form-group">
                   <label for="slug">Slug</label>

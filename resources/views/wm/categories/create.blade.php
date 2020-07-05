@@ -16,9 +16,23 @@
           <h1 class="display-4">New Category</h1>
         </div>
       </div>
-      <div class="col-md-12">
+      <div class="col-md-12 card-col">
         <div class="card">
           <h5 class="card-header">Main Information</h5>
+          @if(session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+          @endif
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
             <div class="card-body">
                 {{Form::open(array('method' => "POST", 'action' => 'WmCategoriesController@store'))}}
                     <div class="form-group"> 
@@ -40,10 +54,20 @@
                         <small class="form-text text-muted">Optional</small>
                     </div>
                     <div class="form-group">
+                      <label for="seodescription">Seo Meta Description</label>
+                      <input type="text" class="form-control" id="seodescription" name="seodescription" >
+                      <small class="form-text text-muted">Optional</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="seokeywords">Seo Meta Keywords</label>
+                      <input type="text" class="form-control" id="seokeywords" name="seokeywords" >
+                      <small class="form-text text-muted">Optional</small>
+                    </div>
+                    <div class="form-group">
                         <label for="status">Status</label>
-                        <select class="form-control" id="status">
-                          <option>Active</option>
-                          <option>Inactive</option>
+                        <select class="form-control" id="status" name="status">
+                          <option value="1">Active</option>
+                          <option value="0">Inactive</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -13,6 +13,7 @@
       <div class="col-md-12">
         <div class="jumbotron">
           <h1 class="display-4">Tags</h1>
+          <p class="lead">{{count($tags)}} tags in total</p>
         </div>
       </div>
 

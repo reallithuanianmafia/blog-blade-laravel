@@ -63,9 +63,11 @@ class WmSeriesController extends Controller
             'name' => $data['name'],
             'description' => $data['description'],
             'category_id' => $data['category_id'],
+            'seodescription' => $data['seodescription'],
+            'seokeywords' => $data['seokeywords'],
             'slug' => $data['slug'],
         ]);
-        return redirect(route('wm.series.index'));
+        return redirect(route('wm.series.create'))->with('success', 'Category created successfully.');
     }
 
     /**

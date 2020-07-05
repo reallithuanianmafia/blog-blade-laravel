@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+    min-height: 100vh;
+}
+footer
+{
+    margin-top: auto;
+}
+.navbar-brand
+{
+    font-family: 'Fjalla One', sans-serif;
+}
+.nav-link
+{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.my-nav-list
+{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.my-nav-list a
+{
+    text-decoration: none;
+    color: black;
+}
+.my-nav-list a.active
+{
+    text-decoration: none;
+    background: #24252A;
+    border-color: #24252A;
+}
+
+
+/* 1.4 Breadcrumb Navigation */
+nav .breadcrumb
+{
+    background: #24252A;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+nav .breadcrumb li a
+{
+    color: #f8f9fa;
+    text-decoration: none;
+}
+.breadcrumb
+{
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 600px) 
+{
+    .breadcrumb li
+    {
+        font-size: 13px;
+    }
+}
+.breadcrumb-item.active
+{
+    color: #e9ecef;
+}
+/* Jumbotrons */
+@media only screen and (max-width: 600px) 
+{
+    .jumbotron div h1
+    {
+        font-size: 2em;
+    }
+}
+
+/* Tables */
+
+th
+{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+td
+{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.card-header
+{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+input, label
+{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.card-col
+{
+    margin-bottom: 2em;
+}
+footer
+{
+    margin-top: auto;
+    padding-top: 1em;
+    background: #24252A;
+}
+footer p
+{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 600px) 
+{
+    .footer-p
+    {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1em
+    }
+}

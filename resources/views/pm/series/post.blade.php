@@ -31,6 +31,7 @@
             <div class="col-md-12" style="margin-bottom: 3%;">
                 <div class="row">
                     <div class="col-md-12" style="margin-bottom: 1%;">
+                        @if(Auth::check())
                         {{Form::open(array('method' => 'POST', 'action' => ['PmMyAccountsController@likedpostsstore', $post->id]))}}
                         @if(auth()->user()->likes->whereIn('post_id', $post->id)->first())
                         <button class="btn btn-dark"><ion-icon name="thumbs-up-outline"></ion-icon> Take your Like back</button>
@@ -38,8 +39,12 @@
                         <button class="btn btn-light"><ion-icon name="thumbs-up-outline"></ion-icon> Like</button>
                         @endif
                         {{Form::close()}}
+                        @else
+                        <a class="btn btn-light" href="{{route('login')}}"><ion-icon name="thumbs-up-outline"></ion-icon> Like</a>
+                        @endif
                     </div>
                     <div class="col-md-12" style="margin-bottom: 1%;">
+                        @if(Auth::check())
                         {{Form::open(array('method' => 'POST', 'action' => ['PmMyAccountsController@savedpostsstore', $post->id]))}}
                         @if(auth()->user()->savedposts->whereIn('post_id', $post->id)->first())
                         <button class="btn btn-dark" type="submit" value="Like">Remove from Read Later <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
@@ -47,11 +52,12 @@
                         <button class="btn btn-primary" type="submit" value="Like">Add to Read Later <ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon></button>
                         @endif 
                         {{Form::close()}}
+                        @else
+                        <a class="btn btn-primary" href="{{route('login')}}" style="color: white;"><ion-icon name="heart" role="img" class="md hydrated" aria-label="heart"></ion-icon> Add to Read Later </a>
+                        @endif
                     </div>
                 </div>
             </div>
-
-    
         </div>
       </div>
 </div>
