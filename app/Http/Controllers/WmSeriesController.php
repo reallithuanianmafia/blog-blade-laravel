@@ -54,6 +54,14 @@ class WmSeriesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:series|max:100',
+            'description' => 'required|max:200',
+            'parent_id' => 'required',
+            'seodescription' => 'required|max:150',
+            'seokeywords' => 'required|max:150',
+            'status' => 'required'
+        ]);
         $data = request()->all();
         if(!$data['slug'])
         {
@@ -66,8 +74,9 @@ class WmSeriesController extends Controller
             'seodescription' => $data['seodescription'],
             'seokeywords' => $data['seokeywords'],
             'slug' => $data['slug'],
+            'status' => $data['status']
         ]);
-        return redirect(route('wm.series.create'))->with('success', 'Category created successfully.');
+        return redirect(route('wm.series.create'))->with('success', 'Series created successfully.');
     }
 
     /**

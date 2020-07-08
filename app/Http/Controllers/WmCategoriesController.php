@@ -56,11 +56,11 @@ class WmCategoriesController extends Controller
     {
         $this->authorize('create' , Category::class);
         $request->validate([
-            'name' => 'required|unique:categories',
-            'description' => 'required',
-            'parent_id' => 'required',
-            'seodescription' => 'required',
-            'seokeywords' => 'required',
+            'name' => 'required|unique:categories|max:100',
+            'description' => 'required|max:200',
+            'category_id' => 'required',
+            'seodescription' => 'required|max:150',
+            'seokeywords' => 'required|max:150',
             'status' => 'required'
         ]);
         $data = request()->all();

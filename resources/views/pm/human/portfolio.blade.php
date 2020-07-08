@@ -1,6 +1,6 @@
 @extends('layouts.pm')
 @section('title')Portfolio @endsection
-@section('metadescription')My Portfolio @endsection
+@section('metadescription')My Portfolio.@endsection
 @section('metakeywords')portfolio, works, azarguliyev @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>

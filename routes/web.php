@@ -25,6 +25,10 @@ Route::name('pm.')->group(function () {
     Route::get('/' , 'PmHomesController@index')->name('home');
         // Do not touch to this shit.
     Route::get('/search', 'PmSearchController@index');
+        // Portfolio/Work Section
+    Route::get('/portfolio', 'PortfoliosController@index')->name('portfolio.index');
+    Route::get('/portfolio/azar', 'PortfoliosController@azar')->name('portfolio.azar');
+    Route::get('/portfolio/kamran', 'PortfoliosController@kamran')->name('portfolio.kamran');
         // Categories
     Route::get('/categories', 'PmCategoriesController@index')->name('categories.index');
     Route::get('/categories/{slug}', 'PmCategoriesController@show')->name('categories.show');
@@ -39,11 +43,11 @@ Route::name('pm.')->group(function () {
     Route::get('/human', 'HumansController@index')->name('human.index');
     Route::get('/human/about', 'HumansController@about')->name('human.about');
     Route::get('/human/privacy', 'HumansController@privacy')->name('human.privacy');
-    Route::get('/portfolio', 'HumansController@portfolio')->name('human.portfolio');
     Route::get('/human/contact', 'HumansController@contact')->name('human.contact');
     Route::post('/human/contact', 'HumansController@store')->name('human.contact.store');
         //
     Route::post('/puttingacomment/{postslug}', 'PmCommentsController@store')->name('pm.comments.store');
+    
         // My Account
     Route::prefix('/myaccount')->middleware('auth')->group(function () {
         Route::get('/', 'PmMyAccountsController@index')->name('myaccount.index');

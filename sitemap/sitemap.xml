@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.azarguliyev.com/</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/posts</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/series</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/login</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/register</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/series/laravel-7-making-blog-application/laravel-test-post-imqri</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/laravel</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/series/laravel-7-making-blog-application</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/human/about</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/human/privacy</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/portfolio</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/human/contact</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/php</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/daddy-javascript</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/bootstrap</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/cascading-style-sheets-css</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/categories/hypertext-markup-language-html</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/password/reset</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.azarguliyev.com/human</loc>
+  <lastmod>2020-07-08T00:52:48+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

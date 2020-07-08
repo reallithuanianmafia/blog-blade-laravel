@@ -1,7 +1,7 @@
 @extends('layouts.pm')
 @section('title')About @endsection
-@section('metadescription')This is the section where you can find information about AZARGULIYEV COM @endsection
-@section('metakeywords')about us, azarguliyev @endsection
+@section('metadescription')This is the section where you can find information about me.@endsection
+@section('metakeywords')about us,azarguliyev @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{route('pm.home')}}">Home</a></li>
 <li class="breadcrumb-item active" aria-current="page">About</li>

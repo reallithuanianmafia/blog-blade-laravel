@@ -19,6 +19,20 @@
       <div class="col-md-12 card-col">
         <div class="card">
           <h5 class="card-header">Main Information</h5>
+          @if(session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+          @endif
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
             <div class="card-body">
               {{Form::open(array('method' => 'POST', 'action' => 'WmSeriesController@store'))}}
               <div class="form-group">
@@ -50,9 +64,9 @@
               </div>
               <div class="form-group">
                   <label for="status">Status</label>
-                  <select class="form-control" id="status">
-                    <option>Active</option>
-                    <option>Inactive</option>
+                  <select class="form-control" id="status" name="status">
+                    <option value="1">Active</option>
+                    <option value="0">Inactive</option>
                   </select>
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>

@@ -54,6 +54,16 @@ class WmPostsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:posts|max:100',
+            'description' => 'required|max:200',
+            'content' => 'required|max:10000',
+            'category_id' => 'required',
+            'seodescription' => 'required|max:150',
+            'seokeywords' => 'required|max:150',
+            'status' => 'required',
+            'series_id' => 'required',            
+        ]);
         $data = request()->all();
         if(!$data['slug'])
         {
@@ -67,7 +77,8 @@ class WmPostsController extends Controller
             'name' => $data['name'],
             'content' => $data['content'],
             'description' => $data['description'],
-            'keywords' => $data['keywords'],
+            'seodescription' => $data['seodescription'],
+            'seokeywords' => $data['seokeywords'],
             'category_id' => $data['category_id'],
             'series_id' => $data['series_id'],
             'user_id' => auth()->user()->id,

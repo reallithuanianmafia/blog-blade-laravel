@@ -23,18 +23,32 @@
           {{Form::open(array('method' => 'POST', 'action' => 'WmPostsController@store'))}}
                 <div class="card" style="margin-bottom: 3%;">
                   <h5 class="card-header">Main Information</h5>
+                  @if(session('success'))
+                  <div class="alert alert-success">
+                    {{ session('success') }}
+                  </div>
+                  @endif
+                  @if ($errors->any())
+                      <div class="alert alert-danger">
+                          <ul>
+                              @foreach ($errors->all() as $error)
+                                  <li>{{ $error }}</li>
+                              @endforeach
+                          </ul>
+                      </div>
+                  @endif
                   <div class="card-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" name="name">
+                    <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                     </div>
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <input type="text" class="form-control" id="description" name="description">
+                      <input type="text" class="form-control" id="description" name="description" value="{{old('description')}}">
                     </div>
                     <div class="form-group">
                       <label for="content">Content</label>
-                      <textarea name="content" id="editor"></textarea>
+                    <textarea name="content" id="editor">{{old('content')}}</textarea>
                     </div>
                     <script>
                       ClassicEditor
@@ -74,7 +88,7 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label>Slug</label>
-                      <input type="text" class="form-control" name="slug">
+                      <input type="text" class="form-control" name="slug" value="{{old('slug')}}">
                       <small> As a default, slug will be automatically set by name. You can also customize it.</small>
                     </div>
                   </div>
@@ -100,8 +114,12 @@
                   <h5 class="card-header">Search engine optimization (SEO)</h5>
                   <div class="card-body">
                     <div class="form-group">
+                      <label>Description</label>
+                      <input type="text" class="form-control" name="seodescription" value="{{old('seodescription')}}">
+                    </div>
+                    <div class="form-group">
                       <label>Keywords</label>
-                      <input type="text" class="form-control" name="keywords">
+                      <input type="text" class="form-control" name="seokeywords" value="{{old('seokeywords')}}">
                     </div>
                     <div class="form-group">
                       <button type="submit" class="btn btn-primary form-control">Submit</button>
