@@ -40,22 +40,22 @@
             {{Form::open(array('method' => 'POST', 'action' => 'HumansController@store'))}}
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                   <small class="form-text text-muted">We'll never share your name with anyone else.</small>
                 </div>
                 <div class="form-group">
                   <label for="subject">Subject</label>
-                  <input type="text" class="form-control" id="subject" name="subject">
+                  <input type="text" class="form-control" id="subject" name="subject" value="{{old('subject')}}">
                   <small class="form-text text-muted">We'll never share your name with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value="{{old('email')}}">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                 <div class="form-group">
                     <label for="message" >Message</label>
-                    <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+                    <textarea class="form-control" id="message" rows="3" name="message">{{old('message')}}</textarea>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="check" name="checkbox" >
