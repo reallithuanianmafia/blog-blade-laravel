@@ -39,8 +39,14 @@ class WmTagsController extends Controller
     public function store(Request $request)
     {
         $data = request()->all();
-        $tag = Tag::create(['name' => $data['name']]);
-        return redirect(route('wm.tags.index'));
+            $names = $data['name'];
+            foreach($names as $name)
+            {
+                Tag::create([
+                    'name' => $name,
+                ]);
+            }
+            return redirect(route('wm.tags.index'));
     }
 
     /**

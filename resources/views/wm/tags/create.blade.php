@@ -17,21 +17,30 @@
           </div>
         </div>
         <div class="col-md-12">
-          {{Form::open(array('method' => 'POST', 'action' => 'WmTagsController@store'))}}
                 <div class="card" style="margin-bottom: 3%;">
-                  <h5 class="card-header">Main Information</h5>
-                  <div class="card-body">
+                  <div class="card-header">
+                    <h5>Main Information</h5>
+                    <button class="btn btn-dark btn-sm" id="add-more-tags">Add More Tags</button>
+                  </div>
+                  {{Form::open(array('method' => 'POST', 'action' => 'WmTagsController@store'))}}
+                  <div class="card-body" id="card-body">
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" class="form-control" name="name">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary form-control" value="Submit">
+                      <input type="text" class="form-control" name="name[]">
                     </div>
                   </div>
+                  <div class="card-footer">
+                    <div class="form-group">
+                      <input type="submit" id="submit" class="btn btn-primary" value="Submit">
+                  </div>
+                  </div>
+                  {{Form::close()}}
                 </div>
-                {{Form::close()}}
+                
         </div>
     </div>
 </div>
+@endsection
+@section('js')
+<script src="{{URL::asset('pm/js/azar.js')}}"></script>
 @endsection

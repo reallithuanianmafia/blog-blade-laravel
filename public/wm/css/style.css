@@ -119,3 +119,8 @@ footer p
         font-size: 1em
     }
 }
+
+#delete-tag-button
+{
+    margin-top: 1%;
+}

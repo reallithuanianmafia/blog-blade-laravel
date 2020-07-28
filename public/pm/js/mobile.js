@@ -1,8 +1,8 @@
 function openNav()
 {
-    document.getElementById('mobile__menu').style.width = "100%";
+    document.getElementById('mobile__menu').style.display = "inline !important";
 }
 function closeNav()
 {
-    document.getElementById('mobile__menu').style.width = "0%";
+    document.getElementById('mobile__menu').style.display = "none";
 }

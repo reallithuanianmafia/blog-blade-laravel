@@ -11,7 +11,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <h1 class="display-4 text-center">Portfolio</h1>
-          <p class="lead text-center">This is the section where you can find my and my colleague's works and inquire in contact section.</p>
+          <p class="lead text-center">This is the section where you can find my and my colleague's works and <span class="badge badge-primary">inquire in contact section</span>.</p>
         </div>
       </div>
 </div>
@@ -23,8 +23,15 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Full Stack Web Developer</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-dark">More about Azar's works</a>
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Fully Functional Blog. Seo included. (azarguliyev.com)</a>
+            <a href="#" class="list-group-item list-group-item-action">Fully Functional E-commerce platform. (subdomain will be provided soon)</a>
+            <a href="#" class="list-group-item list-group-item-action">Fully Functional Stock Management System. (subdomain will be provided soon)</a>
+            <a href="#" class="list-group-item list-group-item-action">Responsive mobile-friendly Web Design. (subdomain will be provided soon)</a>
+            <a href="#" class="list-group-item list-group-item-action">Responsive mobile-friendly Web Design 2. (subdomain will be provided soon)</a>
+            <a href="#" class="list-group-item list-group-item-action">Responsive mobile-friendly Web Design 3. (subdomain will be provided soon)</a>
+            <a href="#" class="list-group-item list-group-item-action">Responsive mobile-friendly Web Design 4. (subdomain will be provided soon)</a>
+          </div>
         </div>
       </div>
 </div>
@@ -36,11 +43,17 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Logo&Design</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <div class="col-md-12 col-margin">
+          <img width="70%" class="img-fluid" src="{{URL::asset('portfoliostuff/kamran/1.png')}}">
+          </div>
+          <div class="col-md-12 col-margin">
+            <img width="70%" class="img-fluid" src="{{URL::asset('portfoliostuff/kamran/2.png')}}">
+          </div>
+          <div class="col-md-12 col-margin">
+            <img width="70%" class="img-fluid" src="{{URL::asset('portfoliostuff/kamran/3.png')}}">
+          </div>
           <a href="#" class="btn btn-dark">More about Kamran's works</a>
         </div>
       </div>
 </div>
-
-
 @endsection
