@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+
+body
+{ 
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer
+{
+    margin-top: auto;
+    padding-top: 1em;
+    background: #24252A;
+}
+footer p
+{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+/* 1.2 - Navigation Bar */
+
+.brand-logo, .nav-links li, .nav-links a, .nav-button
+{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-transform: uppercase;
+}
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background: #24252A;
+}
+.nav-links
+{
+    list-style: none;
+}
+.nav-links li
+{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-links li a
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-links li a:hover
+{
+    color: #FFC706;
+}
+
+.nav-button
+{
+    padding: 9px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border: none;
+    background: none;
+}
+
+.nav-button:hover
+{
+    color: #FFC706;
+}
+.logo-img
+{
+    width: 20em;
+}
+.logout-button
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+@media only screen and (max-width: 600px) 
+{
+    .logo-img
+    {
+        width: 15em;
+    }
+}
+@media only screen and (max-width: 560px) 
+{
+    .logo-img
+    {
+        width: 12em;
+    }
+}
+@media only screen and (max-width: 500px) 
+{
+    .logo-img
+    {
+        width: 10em;
+    }
+}
+@media only screen and (max-width: 350px) 
+{
+    .logo-img
+    {
+        width: 8em;
+    }
+}
+@media only screen and (max-width: 1260px) {
+    .user_panel, .desktop__menu {
+      display: none;
+    }
+
+}
+
+@media screen and (min-width: 1260px) {
+    .open
+    {
+        display: none;
+    }
+}
+
+.open
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+.overlay
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: #24252A;
+    overflow-x: hidden;
+    overflow: hidden;
+    transition: all 0.5s ease 0s;
+}
+.overlay__content
+{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.overlay__content a
+{
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 26px;
+    color: #edf0f1;
+    text-transform: uppercase;
+    padding: 15px;
+    transition: all 0.3s ease 0s;
+}
+@media only screen and (max-width: 600px) 
+{
+    .overlay__content a
+    {
+        font-size: 0.9em;
+    }
+}
+.overlay a:hover
+{
+    color: #FFC706;
+}
+.overlay .close
+{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+.overlay .close:hover
+{
+    color: white;
+}
+a.mobile_brand
+{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    top: 5%;
+    left: 5%;
+    margin-bottom: 1%;
+}
+
+a.open
+{
+    padding: 0.5em 1em;
+    font-size: 11px;
+    text-decoration: none;
+    background: #24252A;
+    color: #dae0e5;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #dae0e5; 
+}
+a.open:hover
+{
+    border-color: red;
+}
+/* 1.3 - Search Section */
+.search_section
+{
+    margin: 2% 0;
+    width: 100%;
+}
+
+.search_panel
+{
+    width: 100%;
+    position: relative;
+}
+
+.search_panel input[type='text']
+{
+    width: 80%;
+    height: 35px;
+    outline: red;
+    padding-left: 1em;
+    font-family: 'Montserrat', sans-serif;
+    border: 0px double #24252A;
+    border-radius: 15px 0 0 15px; 
+
+}
+
+.search_panel button
+{
+    position: absolute;
+    width: 20%;
+    background-color: #24252A; /* Green */
+    color: #f8f9fa;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    right: 6px;
+    padding-right: 6px;
+    padding-left: 6px;
+    border: 1px solid #24252A ;
+    border-radius: 0 15px 15px 0; 
+    outline: none;
+}
+.search_panel button:active, .search_panel button:visited
+{
+    outline: none;
+    border: none;
+}
+@media only screen and (max-width: 600px) {
+    .search_panel input
+    {
+        font-size: 13px;
+    }
+}
+/* 1.4 Breadcrumb Navigation */
+nav .breadcrumb
+{
+    background: #24252A;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+nav .breadcrumb li a
+{
+    color: #f8f9fa;
+    text-decoration: none;
+}
+.breadcrumb
+{
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 600px) 
+{
+    .breadcrumb li
+    {
+        font-size: 13px;
+    }
+}
+.breadcrumb-item.active
+{
+    color: #e9ecef;
+}
+/* Jumbotrons */
+@media only screen and (max-width: 600px) 
+{
+    .jumbotron div h1
+    {
+        font-size: 2em;
+    }
+}
+/* Slogan Jumbotron for Main Page */
+.slogan
+{
+    background: #f8f9fa;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) 
+{
+    .slogan div p
+    {
+        padding-top: 2rem;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+    }
+}
+/* 1.5 - Card */
+.card
+{
+    min-height: 100%;
+}
+.card_body_fixed_height
+{
+    height: 50%;
+}
+.card-body-description
+{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.card-body-title a
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #24252A;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.card-body-title a h5:hover
+{
+    cursor: pointer;
+    color: red;
+}
+.article-card div a,.article-card div a h5
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #24252A;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.article-category a, .article-author a, .article-comment a, .article-date p, .playlist a
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #24252A;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.read-more
+{
+    color: white !important;
+}
+.article-date p
+{
+    margin: 0;
+}
+.article-card div a h5:hover,
+.article-category a:hover,
+.article-author a:hover,
+.article-date p:hover,
+.article-comment a:hover, .playlist a:hover
+{
+    cursor: pointer;
+    color: red;
+}
+.article-col, .series-col, .category-col
+{
+    margin-bottom: 2em;
+}
+/* Categories and Series */
+.category-list-group-item, .series-list-group-item
+{
+    padding:0;
+}
+.error-column
+{
+    margin-bottom: 2rem;
+}
+/* Playlist */
+.series-post-col
+{
+    margin-top: 2em;
+}
+.playlist-col
+{
+    z-index: 0;
+    margin: 2em 0;
+}
+/* Comment */
+.comment-list
+{
+    padding: 0;
+    list-style: none;
+}
+.comment-list li
+{
+    margin: 4% 0;
+}
+.comment p
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9em;
+}
+.comment h6
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+}
+.comment small
+{
+    float: right;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.comment-card div .card-title
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #24252A;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+.comment-card div .card-title:hover
+{
+    color: red;
+}
+.content-col
+{
+    margin-top: 1vw;
+}
+.comment-col-margin
+{
+    margin: 2em 0;
+}
+/* Comment End */
+ul
+{
+    margin: 0;
+}
+/* Footer List */
+.footer-list ul
+{
+    list-style: none;
+}
+.footer-list ul li
+{
+    display: inline-block;
+    color: white;
+}
+.footer-col
+{
+    margin-bottom: 2em;
+}
+.footer-col a
+{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: uppercase;
+}
+@media only screen and (max-width: 600px) 
+{
+    .footer-p
+    {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1em
+    }
+}
+.col-margin
+{
+    margin-bottom: 2em;
+}
