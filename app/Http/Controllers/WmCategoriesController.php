@@ -31,6 +31,9 @@ class WmCategoriesController extends Controller
     {
         $this->authorize('create' , Category::class);
         $categories = Category::where('parent_id', '=', NULL)->get();
+        
+        $allcategories=Category::all();
+
         $categories_dropdown = "<select name='parent_id' class='form-control'><option value='0'>Set as Main Category</option>";
         foreach($categories as $category)
         {
@@ -43,7 +46,7 @@ class WmCategoriesController extends Controller
             }
         }
         $categories_dropdown .= "</select>";
-        return view('wm.categories.create', compact('categories_dropdown'));
+        return view('wm.categories.create', compact('categories_dropdown','allcategories'));
     }
 
     /**
@@ -58,9 +61,9 @@ class WmCategoriesController extends Controller
         $request->validate([
             'name' => 'required|unique:categories|max:100',
             'description' => 'required|max:200',
-            'category_id' => 'required',
-            'seodescription' => 'required|max:150',
-            'seokeywords' => 'required|max:150',
+            'parent_id' => 'required',
+            //'seodescription' => 'required|max:150',
+            //'seokeywords' => 'required|max:150',
             'status' => 'required'
         ]);
         $data = request()->all();
@@ -80,8 +83,8 @@ class WmCategoriesController extends Controller
             'name' => $data['name'],
             'description' => $data['description'],
             'parent_id' => $data['parent_id'],
-            'seodescription' => $data['seodescription'],
-            'seokeywords' => $data['seokeywords'],
+            //'seodescription' => $data['seodescription'],
+            //'seokeywords' => $data['seokeywords'],
             'slug' => $data['slug'],
             'status' => $data['status'],
         ]);

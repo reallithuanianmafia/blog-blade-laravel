@@ -19,8 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('description', 200)->nullable();
             $table->integer('parent_id')->nullable();
             $table->string('slug')->nullable();
-            $table->string('seodescription', 150)->nullable();
-            $table->string('seokeywords', 150)->nullable();
+            //$table->string('seodescription', 150)->nullable();
+            //$table->string('seokeywords', 150)->nullable();
             $table->char('status');
             $table->timestamps();
         });

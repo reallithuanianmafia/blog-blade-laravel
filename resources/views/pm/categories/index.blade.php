@@ -15,6 +15,11 @@
       </div>
     </div>
 </div>
+
+<div id="app" class="col-md-12">
+  <example-component></example-component>
+</div>
+
 @if(count($categories)>0)
 @foreach($categories as $category)
   @include('pminc.categoriesshowcase')

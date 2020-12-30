@@ -33,6 +33,7 @@
                   </ul>
               </div>
           @endif
+          <!--
             <div class="card-body">
                 {{Form::open(array('method' => "POST", 'action' => 'WmCategoriesController@store'))}}
                     <div class="form-group"> 
@@ -73,6 +74,11 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 {{Form::close()}}
             </div>
+          -->
+          <div class="card-body" id="app">
+            <create-category v-bind:passed_data="{{  json_encode($allcategories) }}"></create-category>
+          </div>
+            
           </div>
       </div>
     </div>

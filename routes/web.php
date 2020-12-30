@@ -105,7 +105,9 @@ Route::name('wm.')->prefix('/webmanager/')->middleware(['auth', 'wmEntrance'])->
     Route::get('testing', 'WmHomeController@test');
 });
 
-
+    Route::get('api/categories', 'API\APIController@categories');
+    Route::get('api/series', 'API\APIController@series');
+    Route::get('api/posts', 'API\APIController@posts');
 
 
 

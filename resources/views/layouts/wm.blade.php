@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{URL::asset('pm/styles/bootstrap.min.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
@@ -61,7 +62,7 @@
   
   <!-- /.container -->
 
-
+  <script src="{{URL::asset('js/app.js')}}" defer></script>
   <!-- Bootstrap core JavaScript -->
   <script src="{{URL::asset('wm/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{URL::asset('wm/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

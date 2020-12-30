@@ -43,7 +43,10 @@
     </div>
 </main>
 @include('pminc.footer')
+<script src="{{URL::asset('js/app.js')}}" defer></script>
 <script type="text/javascript" src="{{URL::asset('pm/js/mobile.js')}}"></script>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+
+
 </body>
 </html>
